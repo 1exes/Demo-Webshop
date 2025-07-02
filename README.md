@@ -85,7 +85,7 @@ describe('Demo-Webshop Startseite', () => {
 
 ## 8. Aufgaben: 100 Testfälle – von leicht bis schwer, gemischt pro Level
 
-Die Testfälle sind in 10 Level eingeteilt.  
+Die Testfälle sind in 7 Level eingeteilt.  
 **Wichtig:** In jedem Level gibt es einfache und schwerere Aufgaben, damit du dich jede Woche mit neuen Herausforderungen beschäftigst.  
 **Plane für jedes Level mindestens 1 Woche ein!**
 
