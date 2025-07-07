@@ -3,7 +3,7 @@ describe('Toolbar  Elektronik prüfen', () => {
 
 
 cy.visit("https://demowebshop.tricentis.com/")
-cy.contains("ELEKTRONIK").should("be.visible");
+cy.get("Elektronik").should("be.visible");
 
     
   });

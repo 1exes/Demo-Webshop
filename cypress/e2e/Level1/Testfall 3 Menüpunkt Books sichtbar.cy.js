@@ -1,10 +1,11 @@
-describe('Demo-Webshop Startseite', () => {
-  it('sollte die Startseite laden', () => {
+describe('Demo-Büchr Button Sichtbarkeitsüberprüfung', () => {
+  it('Button Bücher überprüfen ob sichtbar', () => {
 
 
 cy.visit("https://demowebshop.tricentis.com/")
-cy.contains("BÜCHER").should("be.visible");
+cy.get("Books").should("be.visible");
 
     
   });
+
 });
