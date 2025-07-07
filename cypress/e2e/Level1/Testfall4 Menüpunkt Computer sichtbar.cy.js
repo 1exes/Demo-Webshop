@@ -3,7 +3,7 @@ describe('Toolbar  Computer prüfen', () => {
 
 
 cy.visit("https://demowebshop.tricentis.com/")
-cy.contains("COMPUTER").should("be.visible");
+cy.contains("Computer").should("be.visible");
 
     
   });
