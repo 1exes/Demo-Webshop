@@ -1,10 +1,8 @@
-describe('Toolbar  Elektronik prüfen', () => {
-  it('sollte Menüpunkt Elektronik prüfen ob sichtbar', () => {
+describe('Toolbar  Electronics prüfen', () => {
+  it('sollte Menüpunkt Electronics prüfen ob sichtbar', () => {
 
 
-cy.visit("https://demowebshop.tricentis.com/")
-cy.get("Elektronik").should("be.visible");
-
-    
+cy.visit("https://demowebshop.tricentis.com/");
+    cy.contains('Electronics', { timeout: 10000 }).should('be.visible');
   });
 });

@@ -1,9 +1,9 @@
-describe('Toolbar  Geschenkkarten prüfen', () => {
-  it('sollte Menüpunkt Geschenkkarten prüfen ob sichtbar', () => {
+describe('Toolbar  Gift Cards prüfen', () => {
+  it('sollte Menüpunkt Gift Cards prüfen ob sichtbar', () => {
 
 
 cy.visit("https://demowebshop.tricentis.com/")
-cy.get('Geschenkkarten').should('be.visible');
+cy.contains('Gift Cards').should('be.visible');
 
 
     
