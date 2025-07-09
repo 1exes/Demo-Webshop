@@ -1,9 +1,9 @@
-describe('Toolbar  Schmuck prüfen', () => {
-  it('sollte Menüpunkt Schmuck prüfen ob sichtbar', () => {
+describe('Toolbar  Jewelry prüfen', () => {
+  it('sollte Menüpunkt Jewelry prüfen ob sichtbar', () => {
 
 
 cy.visit("https://demowebshop.tricentis.com/")
-cy.get("Schmuck").should("be.visible");
+cy.contains("Jewelry").should("be.visible");
 
     
   });

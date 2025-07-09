@@ -1,9 +1,9 @@
-describe('Toolbar  Bekleidung&Schuhe prüfen', () => {
-  it('sollte Menüpunkt Bekleidung&Schuhe prüfen ob sichtbar', () => {
+describe('Toolbar  Apparel & Shoes prüfen', () => {
+  it('sollte Menüpunkt Apparel & Shoes prüfen ob sichtbar', () => {
 
 
 cy.visit("https://demowebshop.tricentis.com/")
-cy.get("Bekleidung&Schuhe").should("be.visible");
+cy.contains("Apparel & Shoes").should("be.visible");
 
     
   });
