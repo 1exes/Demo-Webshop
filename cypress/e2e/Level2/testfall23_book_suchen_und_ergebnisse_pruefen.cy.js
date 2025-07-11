@@ -4,7 +4,7 @@ describe('books suchen und ergebnisse überprüfen', () => {
 cy.visit('https://demowebshop.tricentis.com')
 cy.contains('books').click();
 cy.contains('books').should('be.visible');
-cy.get('.product-item').should('have.length', 3);
+cy.get('.product-item').should('have.length', 6);
     
   });
 });
