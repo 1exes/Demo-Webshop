@@ -6,7 +6,5 @@ cy.visit('https://demowebshop.tricentis.com');
 cy.contains('Books').click();
 cy.contains('Books').should('be.visible');
 
-
-    
   });
 });
