@@ -1,10 +1,11 @@
-describe('books suchen und ergebnisse überprüfen', () => {
-  it('soll die Seite Bücher laden und  ', () => {
 
-cy.visit('https://demowebshop.tricentis.com')
-cy.contains('books').click();
-cy.contains('books').should('be.visible');
+
+
+describe('Alle Bücher anzeigen', () => {
+it('zeigt alle Bücher', () => {
+cy.visit('https://demowebshop.tricentis.com');
+cy.contains('Books').click();
+cy.get('select[name="products-pagesize"]').select('12');
 cy.get('.product-item').should('have.length', 6);
-    
-  });
+});
 });
