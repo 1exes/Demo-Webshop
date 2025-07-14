@@ -1,13 +1,9 @@
-describe('nicht exsistierendes Produkt  ', () => {
-  it('sollte nicht exsistierende Produkte anzeigen', () => {
 
-cy.visit('https://demowebshop.tricentis.com')
-cy.get('#small-searchterms').type('Autos{enter}');
-cy.get('.no-result').should('contain', 'No products were found');
-
-
-
-
-    
-  });
+describe('Nicht existierendes Produkt prüfen', () => {
+it('soll das Produkt nicht finden', () => {
+cy.visit('https://demowebshop.tricentis.com');
+cy.get('input[name="q"]').type('SuperLaptop 5000{enter}');
+cy.contains('No products were found that matched your criteria.').should('be.visible');
 });
+});
+

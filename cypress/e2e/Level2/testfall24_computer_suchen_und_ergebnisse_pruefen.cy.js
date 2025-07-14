@@ -1,12 +1,11 @@
-describe('comuter suchen und ergebnisse überprüfen', () => {
-  it('Sollte die Seite Computer laden und die Ergebnisse prüfen', () => {
+describe('Computer-Unterkategorien', () => {
+  it('zeigt Produkte aus allen Kategorien', () => {
+    cy.visit('https://demowebshop.tricentis.com');
 
-
-cy.visit('https://demowebshop.tricentis.com')
-cy.contains('computers').click();
-cy.contains('computers').should('be.visible');
-cy.get('.product-item').should('have.length', 2);
-
-    
+    ['Desktops', 'Notebooks', 'Accessories'].forEach((kategorie) => {
+      cy.contains(kategorie).click({ force: true });
+      cy.get('.product-item').should('have.length.at.least', 1);
+      cy.visit('https://demowebshop.tricentis.com'); 
+    });
   });
 });
