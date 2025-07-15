@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "cypress": "^14.5.1",
+    "cypress-axe": "^1.6.0",
     "cypress-plugin-tab": "^1.0.5"
   }
 }
