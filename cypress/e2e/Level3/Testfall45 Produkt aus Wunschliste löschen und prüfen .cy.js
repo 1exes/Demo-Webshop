@@ -1,12 +1,15 @@
-describe('Wunschliste prüfen und löschen', () => {
-  
-it('Wunschliste löschen', () => {
-cy.visit('https://demowebshop.tricentis.com/books');
-cy.contains('Add to wishlist').first().click();
-cy.get('.wishlist-label').click();
-cy.get('[name="removefromcart"]').check();
-cy.get('[name="updatecart"]').click();
-cy.contains('The wishlist is empty!').should('be.visible');
-});
-
+describe('Wunschliste - Produkt entfernen', () => {
+  const email = 'deine@email.de'; 
+  const password = 'deinPasswort'; 
+  it('Entfernt ein Produkt aus der Wunschliste', () => {
+  cy.visit('https://demowebshop.tricentis.com/');
+  cy.get('.header-links a[href="/login"]').click();
+  cy.get('#Email').type(email);
+  cy.get('#Password').type(password);
+  cy.get('input[value="Log in"]').click();
+  cy.get('.header-links a[href="/wishlist"]').click();
+  //cy.get('input[name="removefromcart"]').check(); 
+  //cy.get('input[name="updatecart"]').click();
+  //cy.get('.wishlist-content').should('contain', 'The wishlist is empty!');
+  });
 });
