@@ -288,367 +288,904 @@ Die Testfälle sind in 7 Level eingeteilt.
 
     > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 35. Prüfe, ob Bewertungen angezeigt werden und die Sortierung funktioniert. Führe folgende Aufgaben durch:
-    a) Öffne eine Produktdetailseite mit vorhandenen Bewertungen.
-    b) Prüfe, ob die Bewertungen nach "Hilfreichste" und "Neueste" sortiert werden können.
-        - Teste beide Sortieroptionen und prüfe, ob sich die Reihenfolge der Bewertungen sichtbar ändert.
-    c) Versuche, mehrfach für das gleiche Produkt zu bewerten. Prüfe, ob dies verhindert wird (z.B. durch Fehlermeldung oder Deaktivierung).
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Sind alle Bewertungen sichtbar und vollständig?
-        - Funktioniert die Sortierung korrekt und nachvollziehbar?
-        - Wird eine Mehrfachbewertung zuverlässig verhindert?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Sortierung funktioniert nicht", "Mehrfachbewertung möglich").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Bewertungen und Sortierung korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Produktdetailseite mit Bewertungen öffnen**
+    - Öffne eine Produktdetailseite, auf der bereits Bewertungen vorhanden sind.
+    - Dokumentiere die gewählte Produktseite und die Anzahl der Bewertungen im Testcode (als Kommentar).
+
+    **b) Sortierfunktion testen**
+    - Prüfe, ob die Bewertungen nach "Hilfreichste" und "Neueste" sortiert werden können.
+    - Teste beide Sortieroptionen und prüfe, ob sich die Reihenfolge der Bewertungen sichtbar ändert.
+    - Dokumentiere die Sortierreihenfolge und Auffälligkeiten im Testcode.
+
+    **c) Mehrfachbewertung verhindern**
+    - Versuche, mehrfach für das gleiche Produkt zu bewerten (z.B. mit gleichem Nutzer).
+    - Prüfe, ob dies verhindert wird (z.B. durch Fehlermeldung oder Deaktivierung des Bewertungsbuttons).
+    - Dokumentiere die Reaktion des Systems im Testcode.
+
+    **d) Kontrollfragen**
+    - Sind alle Bewertungen sichtbar und vollständig?
+    - Funktioniert die Sortierung korrekt und nachvollziehbar?
+    - Wird eine Mehrfachbewertung zuverlässig verhindert?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Sortierung funktioniert nicht", "Mehrfachbewertung möglich").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Bewertungen und Sortierung funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 36. Füge zwei verschiedene Produkte zum Vergleich hinzu und führe folgende Aufgaben durch:
-    a) Wähle zwei unterschiedliche Produkte aus (z.B. aus "Books" und "Computers") und füge sie zur Vergleichsliste hinzu.
-    b) Öffne die Vergleichsseite und prüfe, ob beide Produkte korrekt angezeigt werden.
-    c) Vergleiche die Produktdaten (z.B. Name, Preis, Eigenschaften) und dokumentiere die Unterschiede im Test (als Kommentar).
-    d) Entferne eines der Produkte aus der Vergleichsliste und prüfe, ob die Liste korrekt aktualisiert wird.
-    e) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Werden alle Produktdaten korrekt angezeigt und verglichen?
-        - Bleibt nach Entfernen eines Produkts nur das andere übrig?
-        - Gibt es Darstellungsfehler oder bleibt ein Produkt "hängen"?
-    f) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Vergleichsliste aktualisiert sich nicht", "Produkt bleibt sichtbar").
-    g) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Vergleichsfunktion funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Produkte zum Vergleich auswählen**
+    - Wähle zwei unterschiedliche Produkte aus (z.B. eines aus "Books" und eines aus "Computers").
+    - Füge beide Produkte zur Vergleichsliste hinzu.
+    - Dokumentiere die gewählten Produkte im Testcode (als Kommentar).
+
+    **b) Vergleichsseite öffnen und prüfen**
+    - Öffne die Vergleichsseite und prüfe, ob beide Produkte korrekt angezeigt werden.
+    - Dokumentiere die Anzeige und die Produktdaten im Testcode.
+
+    **c) Produktdaten vergleichen**
+    - Vergleiche die Produktdaten (z.B. Name, Preis, Eigenschaften) und dokumentiere die Unterschiede im Testcode (als Kommentar).
+
+    **d) Produkt aus Vergleichsliste entfernen**
+    - Entferne eines der Produkte aus der Vergleichsliste.
+    - Prüfe, ob die Liste korrekt aktualisiert wird und nur das verbleibende Produkt angezeigt wird.
+    - Dokumentiere die Aktualisierung im Testcode.
+
+    **e) Kontrollfragen**
+    - Werden alle Produktdaten korrekt angezeigt und verglichen?
+    - Bleibt nach Entfernen eines Produkts nur das andere übrig?
+    - Gibt es Darstellungsfehler oder bleibt ein Produkt "hängen"?
+
+    **f) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Vergleichsliste aktualisiert sich nicht", "Produkt bleibt sichtbar").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Vergleichsfunktion funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 37. Teile ein Produkt auf Social Media und führe folgende Aufgaben durch:
-    a) Öffne eine Produktdetailseite und suche nach Social-Media-Buttons (z.B. Facebook, Twitter).
-    b) Klicke auf einen Social-Media-Button und prüfe, ob ein Teilen-Fenster oder Popup erscheint.
-    c) Prüfe, ob die Produktdaten (Name, Bild, Link) korrekt im Teilen-Fenster übernommen werden.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Sind alle relevanten Produktdaten im Teilen-Fenster sichtbar?
-        - Wird das Teilen-Fenster korrekt geöffnet und wieder geschlossen?
-        - Gibt es Social-Media-Buttons, die nicht funktionieren?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produktdaten fehlen im Share-Fenster", "Button ohne Funktion").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Teilen-Funktion funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Es muss kein echter Share durchgeführt werden! Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Produktdetailseite öffnen und Social-Media-Buttons suchen**
+    - Öffne eine Produktdetailseite und suche nach Social-Media-Buttons (z.B. Facebook, Twitter).
+    - Dokumentiere die gefundenen Buttons im Testcode (als Kommentar).
+
+    **b) Teilen-Funktion testen**
+    - Klicke auf einen Social-Media-Button und prüfe, ob ein Teilen-Fenster oder Popup erscheint.
+    - Prüfe, ob die Produktdaten (Name, Bild, Link) korrekt im Teilen-Fenster übernommen werden.
+    - Dokumentiere die übernommenen Produktdaten im Testcode.
+
+    **c) Funktion und Anzeige prüfen**
+    - Prüfe, ob das Teilen-Fenster korrekt geöffnet und wieder geschlossen werden kann.
+    - Teste alle verfügbaren Social-Media-Buttons und prüfe, ob sie funktionieren.
+    - Dokumentiere Auffälligkeiten und Fehler im Testcode.
+
+    **d) Kontrollfragen**
+    - Sind alle relevanten Produktdaten im Teilen-Fenster sichtbar?
+    - Wird das Teilen-Fenster korrekt geöffnet und wieder geschlossen?
+    - Gibt es Social-Media-Buttons, die nicht funktionieren?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produktdaten fehlen im Share-Fenster", "Button ohne Funktion").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Teilen-Funktion funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Es muss kein echter Share durchgeführt werden! Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 38. Filtere "Books" nach einem Preisbereich und nach Kategorie und führe folgende Aufgaben durch:
-    a) Öffne die "Books"-Übersichtsseite und wende einen Preisfilter (z.B. 10–20 €) an.
-    b) Wähle zusätzlich eine Kategorie (z.B. "Science") aus und prüfe, ob nur passende Produkte angezeigt werden.
-    c) Setze die Filter zurück und prüfe, ob wieder alle Produkte angezeigt werden.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Werden nach Filterung wirklich nur passende Produkte angezeigt?
-        - Funktioniert das Zurücksetzen der Filter zuverlässig?
-        - Gibt es Produkte, die trotz Filter angezeigt werden sollten, aber fehlen?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Filter lässt sich nicht zurücksetzen", "Produkt trotz Filter sichtbar").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Filterfunktion funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Books-Übersichtsseite öffnen und Preisfilter anwenden**
+    - Öffne die "Books"-Übersichtsseite.
+    - Wende einen Preisfilter an (z.B. 10–20 €).
+    - Dokumentiere die gewählten Filter im Testcode (als Kommentar).
+
+    **b) Kategorie auswählen und prüfen**
+    - Wähle zusätzlich eine Kategorie (z.B. "Science") aus.
+    - Prüfe, ob nur passende Produkte angezeigt werden.
+    - Dokumentiere die angezeigten Produkte im Testcode.
+
+    **c) Filter zurücksetzen und prüfen**
+    - Setze die Filter zurück und prüfe, ob wieder alle Produkte angezeigt werden.
+    - Dokumentiere die Anzeige nach dem Zurücksetzen im Testcode.
+
+    **d) Kontrollfragen**
+    - Werden nach Filterung wirklich nur passende Produkte angezeigt?
+    - Funktioniert das Zurücksetzen der Filter zuverlässig?
+    - Gibt es Produkte, die trotz Filter angezeigt werden sollten, aber fehlen?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Filter lässt sich nicht zurücksetzen", "Produkt trotz Filter sichtbar").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Filterfunktion funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 39. Sortiere "Books" nach Preis aufsteigend und führe folgende Aufgaben durch:
-    a) Öffne die "Books"-Übersichtsseite und sortiere die Produkte nach Preis aufsteigend.
-    b) Prüfe, ob die Sortierung korrekt ist, auch bei Preisgleichstand und Produkten ohne Preis.
-    c) Lade die Seite neu und prüfe, ob die Sortierung erhalten bleibt.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Sind alle Produkte korrekt nach Preis sortiert?
-        - Werden Produkte ohne Preis korrekt einsortiert oder ans Ende gestellt?
-        - Bleibt die Sortierung nach Neuladen erhalten?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Sortierung geht nach Reload verloren", "Preisgleichstand falsch einsortiert").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Sortierung nach Preis funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Books-Übersichtsseite öffnen und Sortierung anwenden**
+    - Öffne die "Books"-Übersichtsseite.
+    - Sortiere die Produkte nach Preis aufsteigend.
+    - Dokumentiere die Sortieroption und die Reihenfolge im Testcode (als Kommentar).
+
+    **b) Sortierung prüfen**
+    - Prüfe, ob die Sortierung korrekt ist, auch bei Preisgleichstand und Produkten ohne Preis.
+    - Teste gezielt Produkte mit gleichem Preis und Produkte ohne Preis.
+    - Dokumentiere die Position dieser Produkte im Testcode.
+
+    **c) Seite neu laden und Sortierung prüfen**
+    - Lade die Seite neu und prüfe, ob die Sortierung erhalten bleibt.
+    - Dokumentiere das Verhalten nach dem Neuladen im Testcode.
+
+    **d) Kontrollfragen**
+    - Sind alle Produkte korrekt nach Preis sortiert?
+    - Werden Produkte ohne Preis korrekt einsortiert oder ans Ende gestellt?
+    - Bleibt die Sortierung nach Neuladen erhalten?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Sortierung geht nach Reload verloren", "Preisgleichstand falsch einsortiert").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Sortierung nach Preis funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 40. Sortiere "Books" nach Name A-Z und führe folgende Aufgaben durch:
-    a) Öffne die "Books"-Übersichtsseite und sortiere die Produkte nach Name (A-Z).
-    b) Prüfe, ob Produkte mit Sonderzeichen, Umlauten und Zahlen korrekt einsortiert werden.
-    c) Teste gezielt Produkte mit Zahlen im Namen und prüfe deren Position in der Sortierung.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Werden alle Produkte alphabetisch korrekt sortiert?
-        - Gibt es Probleme mit Umlauten, Sonderzeichen oder Zahlen?
-        - Bleibt die Sortierung nach Neuladen erhalten?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Umlaute falsch sortiert", "Zahlen am Anfang/Ende").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Sortierung nach Name funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Books-Übersichtsseite öffnen und Sortierung nach Name anwenden**
+    - Öffne die "Books"-Übersichtsseite.
+    - Sortiere die Produkte nach Name (A-Z).
+    - Dokumentiere die Sortieroption und die Reihenfolge im Testcode (als Kommentar).
+
+    **b) Sortierung mit Sonderfällen prüfen**
+    - Prüfe, ob Produkte mit Sonderzeichen, Umlauten und Zahlen korrekt einsortiert werden.
+    - Teste gezielt Produkte mit Zahlen im Namen und prüfe deren Position in der Sortierung.
+    - Dokumentiere die Position dieser Produkte im Testcode.
+
+    **c) Seite neu laden und Sortierung prüfen**
+    - Lade die Seite neu und prüfe, ob die Sortierung erhalten bleibt.
+    - Dokumentiere das Verhalten nach dem Neuladen im Testcode.
+
+    **d) Kontrollfragen**
+    - Werden alle Produkte alphabetisch korrekt sortiert?
+    - Gibt es Probleme mit Umlauten, Sonderzeichen oder Zahlen?
+    - Bleibt die Sortierung nach Neuladen erhalten?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Umlaute falsch sortiert", "Zahlen am Anfang/Ende").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Sortierung nach Name funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 41. Filtere "Computers" nach Hersteller und Preis und führe folgende Aufgaben durch:
-    a) Öffne die "Computers"-Übersichtsseite und wende einen Hersteller-Filter an (z.B. "Apple").
-    b) Wende zusätzlich einen Preisfilter an (z.B. 500–1000 €) und prüfe, ob nur passende Produkte angezeigt werden.
-    c) Prüfe, ob keine Produkte doppelt erscheinen und die Filterkombination korrekt funktioniert.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Werden nach Filterung wirklich nur passende Produkte angezeigt?
-        - Gibt es Produkte, die doppelt erscheinen?
-        - Funktioniert das Zurücksetzen der Filter zuverlässig?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produkt doppelt", "Filterkombination fehlerhaft").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Filterkombination funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Computers-Übersichtsseite öffnen und Hersteller-Filter anwenden**
+    - Öffne die "Computers"-Übersichtsseite.
+    - Wende einen Hersteller-Filter an (z.B. "Apple").
+    - Dokumentiere den gewählten Filter im Testcode (als Kommentar).
+
+    **b) Preisfilter anwenden und prüfen**
+    - Wende zusätzlich einen Preisfilter an (z.B. 500–1000 €).
+    - Prüfe, ob nur passende Produkte angezeigt werden.
+    - Dokumentiere die angezeigten Produkte im Testcode.
+
+    **c) Filterkombination und Doppelte prüfen**
+    - Prüfe, ob keine Produkte doppelt erscheinen und die Filterkombination korrekt funktioniert.
+    - Dokumentiere Auffälligkeiten und Fehler im Testcode.
+
+    **d) Filter zurücksetzen und prüfen**
+    - Setze die Filter zurück und prüfe, ob wieder alle Produkte angezeigt werden.
+    - Dokumentiere die Anzeige nach dem Zurücksetzen im Testcode.
+
+    **e) Kontrollfragen**
+    - Werden nach Filterung wirklich nur passende Produkte angezeigt?
+    - Gibt es Produkte, die doppelt erscheinen?
+    - Funktioniert das Zurücksetzen der Filter zuverlässig?
+
+    **f) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produkt doppelt", "Filterkombination fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Filterkombination funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 42. Sortiere "Books" nach Preis absteigend und führe folgende Aufgaben durch:
-    a) Öffne die "Books"-Übersichtsseite und sortiere die Produkte nach Preis absteigend.
-    b) Prüfe, ob Produkte mit gleichem Preis korrekt gruppiert werden.
-    c) Entferne ein Produkt und prüfe, ob die Sortierung erhalten bleibt.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Sind alle Produkte korrekt nach Preis absteigend sortiert?
-        - Werden Produkte mit gleichem Preis korrekt gruppiert?
-        - Bleibt die Sortierung nach Entfernen eines Produkts erhalten?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Sortierung geht verloren", "Preisgleichstand falsch gruppiert").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Sortierung nach Preis absteigend funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Books-Übersichtsseite öffnen und Sortierung anwenden**
+    - Öffne die "Books"-Übersichtsseite.
+    - Sortiere die Produkte nach Preis absteigend.
+    - Dokumentiere die Sortieroption und die Reihenfolge im Testcode (als Kommentar).
+
+    **b) Sortierung und Gruppierung prüfen**
+    - Prüfe, ob Produkte mit gleichem Preis korrekt gruppiert werden.
+    - Teste gezielt Produkte mit gleichem Preis und dokumentiere deren Gruppierung im Testcode.
+
+    **c) Produkt entfernen und Sortierung prüfen**
+    - Entferne ein Produkt und prüfe, ob die Sortierung erhalten bleibt.
+    - Dokumentiere das Verhalten nach dem Entfernen im Testcode.
+
+    **d) Kontrollfragen**
+    - Sind alle Produkte korrekt nach Preis absteigend sortiert?
+    - Werden Produkte mit gleichem Preis korrekt gruppiert?
+    - Bleibt die Sortierung nach Entfernen eines Produkts erhalten?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Sortierung geht verloren", "Preisgleichstand falsch gruppiert").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Sortierung nach Preis absteigend funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 43. Versuche, ein Produkt mit Menge 0 oder negativem Wert in den Warenkorb zu legen und führe folgende Aufgaben durch:
-    a) Öffne eine Produktdetailseite und setze die Menge auf 0, dann auf einen negativen Wert.
-    b) Versuche, das Produkt in den Warenkorb zu legen und prüfe, ob eine Fehlermeldung erscheint.
-    c) Prüfe, ob kein Produkt hinzugefügt wird und die Warenkorbanzeige unverändert bleibt.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird für beide Fälle (0 und negativ) eine Fehlermeldung angezeigt?
-        - Kann trotzdem ein Produkt in den Warenkorb gelangen?
-        - Bleibt die Warenkorbanzeige korrekt?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produkt trotz Fehler im Warenkorb", "Fehlermeldung fehlt").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Fehlermeldungen und Validierung funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Produktdetailseite öffnen und ungültige Mengen setzen**
+    - Öffne eine Produktdetailseite.
+    - Setze die Menge zuerst auf 0, dann auf einen negativen Wert.
+    - Dokumentiere die gewählten Mengen im Testcode (als Kommentar).
+
+    **b) Hinzufügen zum Warenkorb und Fehlermeldung prüfen**
+    - Versuche, das Produkt in den Warenkorb zu legen.
+    - Prüfe, ob eine Fehlermeldung erscheint und kein Produkt hinzugefügt wird.
+    - Dokumentiere die Fehlermeldung und das Verhalten der Warenkorbanzeige im Testcode.
+
+    **c) Warenkorbanzeige prüfen**
+    - Prüfe, ob die Warenkorbanzeige unverändert bleibt (kein Produkt hinzugefügt).
+    - Dokumentiere die Anzeige im Testcode.
+
+    **d) Kontrollfragen**
+    - Wird für beide Fälle (0 und negativ) eine Fehlermeldung angezeigt?
+    - Kann trotzdem ein Produkt in den Warenkorb gelangen?
+    - Bleibt die Warenkorbanzeige korrekt?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produkt trotz Fehler im Warenkorb", "Fehlermeldung fehlt").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Fehlermeldungen und Validierung funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 44. Versuche, ein Produkt mit einer unrealistisch hohen Menge (z.B. 9999) in den Warenkorb zu legen und führe folgende Aufgaben durch:
-    a) Öffne eine Produktdetailseite und setze die Menge auf 9999 (und ggf. weitere hohe Werte).
-    b) Versuche, das Produkt in den Warenkorb zu legen und prüfe, ob eine Begrenzung greift und eine Fehlermeldung erscheint.
-    c) Prüfe, ob die Menge automatisch korrigiert oder zurückgesetzt wird.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird für alle hohen Werte eine Begrenzung/Fehlermeldung angezeigt?
-        - Bleibt die Warenkorbanzeige korrekt?
-        - Kann trotzdem ein Produkt mit zu hoher Menge hinzugefügt werden?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Keine Begrenzung", "Produkt mit 9999 im Warenkorb").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Mengenbegrenzung und Fehlermeldungen funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
-45. Entferne ein Produkt aus der Wunschliste und führe folgende Aufgaben durch:
-    a) Öffne die Wunschliste mit mindestens einem Produkt.
-    b) Entferne ein Produkt und prüfe, ob die Wunschliste sofort aktualisiert wird.
-    c) Prüfe, ob eine entsprechende Meldung angezeigt wird, wenn die Wunschliste leer ist.
-    d) Prüfe, ob keine Geistereinträge (unsichtbare oder "hängende" Produkte) verbleiben.
-    e) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird die Anzeige nach Entfernen sofort aktualisiert?
-        - Erscheint die Leermeldung korrekt?
-        - Bleibt die Wunschliste wirklich leer?
-    f) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Geistereintrag bleibt", "Leermeldung fehlt").
-    g) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Wunschliste funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Produktdetailseite öffnen und hohe Mengen setzen**
+    - Öffne eine Produktdetailseite.
+    - Setze die Menge auf 9999 und ggf. weitere unrealistisch hohe Werte.
+    - Dokumentiere die gewählten Mengen im Testcode (als Kommentar).
+
+    **b) Hinzufügen zum Warenkorb und Begrenzung prüfen**
+    - Versuche, das Produkt in den Warenkorb zu legen.
+    - Prüfe, ob eine Begrenzung greift und eine Fehlermeldung erscheint.
+    - Dokumentiere die Fehlermeldung und das Verhalten der Warenkorbanzeige im Testcode.
+
+    **c) Automatische Korrektur prüfen**
+    - Prüfe, ob die Menge automatisch korrigiert oder zurückgesetzt wird.
+    - Dokumentiere die Korrektur im Testcode.
+
+    **d) Kontrollfragen**
+    - Wird für alle hohen Werte eine Begrenzung/Fehlermeldung angezeigt?
+    - Bleibt die Warenkorbanzeige korrekt?
+    - Kann trotzdem ein Produkt mit zu hoher Menge hinzugefügt werden?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Keine Begrenzung", "Produkt mit 9999 im Warenkorb").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Mengenbegrenzung und Fehlermeldungen funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+
+45. Entferne ein Produkt aus der Wunschliste und führe folgende Aufgaben maximal explizit und schrittweise durch:
+
+    **a) Wunschliste öffnen und Ausgangszustand prüfen**
+    - Öffne die Wunschliste, in der mindestens ein Produkt enthalten ist.
+    - Prüfe, ob alle Produkte korrekt angezeigt werden (Name, Bild, Preis, Hinzufügedatum).
+    - Dokumentiere die Anzahl und Namen der Produkte im Testcode (als Kommentar).
+    - Kontrollfrage: Sind alle Produkte sichtbar und stimmen die Angaben?
+
+    **b) Produkt gezielt entfernen**
+    - Wähle ein Produkt aus der Liste gezielt aus (z.B. das erste oder ein bestimmtes Produkt).
+    - Entferne das Produkt über die entsprechende Funktion (Button, Icon, Link).
+    - Dokumentiere das entfernte Produkt im Testcode (Name, Position, Zeitpunkt).
+    - Kontrollfrage: Wird das Produkt sofort aus der Liste entfernt?
+
+    **c) Aktualisierung der Wunschliste prüfen**
+    - Prüfe, ob die Wunschliste direkt und ohne Neuladen aktualisiert wird (AJAX, UI-Update).
+    - Prüfe, ob die Anzahl der Produkte korrekt angepasst wird.
+    - Dokumentiere die Anzeige nach dem Entfernen im Testcode.
+    - Kontrollfrage: Bleibt die Anzeige konsistent und fehlerfrei?
+
+    **d) Leermeldung und Geistereinträge prüfen**
+    - Entferne ggf. alle Produkte, bis die Wunschliste leer ist.
+    - Prüfe, ob eine Leermeldung oder ein Hinweistext erscheint (z.B. "Ihre Wunschliste ist leer").
+    - Prüfe, ob keine unsichtbaren oder "hängenden" Produkte (Geistereinträge) verbleiben.
+    - Dokumentiere die Anzeige und eventuelle Geistereinträge im Testcode.
+    - Kontrollfrage: Wird die Leermeldung korrekt angezeigt? Sind wirklich keine Produkte mehr sichtbar?
+
+    **e) Kontrollfragen für den Tester**
+    - Wird die Anzeige nach Entfernen eines Produkts sofort und korrekt aktualisiert?
+    - Erscheint die Leermeldung, wenn die Liste leer ist?
+    - Bleibt die Wunschliste wirklich leer, ohne Geistereinträge?
+    - Sind alle UI-Elemente nach Entfernen korrekt?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Geistereintrag bleibt", "Leermeldung fehlt", "Anzeige nicht aktualisiert").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Wunschliste funktioniert korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Wunschlisten-Entfernung, UI-Aktualisierung und Fehlerbehandlung überprüfen und dokumentieren.
 
 ### **Level 4: Warenkorb & Wunschliste**
-46. Lege mehrere Produkte mit unterschiedlichen Varianten (z.B. Größe, Farbe) in den Warenkorb und führe folgende Aufgaben durch:
+46. Lege mehrere Produkte mit unterschiedlichen Varianten (z.B. Größe, Farbe) in den Warenkorb und führe folgende Aufgaben maximal explizit und einheitlich durch:
 
-    **a) Produkte und Varianten auswählen**
-    - Wähle mindestens zwei Produkte mit unterschiedlichen Varianten (z.B. verschiedene Farben/Größen) aus.
-    - Lege beide Produkte in den Warenkorb.
-    - Dokumentiere die gewählten Varianten und Produkte im Testcode (als Kommentar).
+    **a) Produkte und Varianten gezielt auswählen**
+    - Wähle mindestens zwei verschiedene Produkte aus, die jeweils unterschiedliche Varianten bieten (z.B. verschiedene Farben, Größen, Material).
+    - Dokumentiere die Namen, Varianten und Eigenschaften der gewählten Produkte im Testcode (als Kommentar).
+    - Kontrollfrage: Sind die Varianten eindeutig und korrekt auswählbar?
 
-    **b) Anzeige im Warenkorb prüfen**
-    - Prüfe, ob im Warenkorb alle Varianten korrekt angezeigt werden (Farbe, Größe, Produktbild, Produktname).
-    - Prüfe, ob die Warenkorbsumme stimmt.
+    **b) Produkte mit Varianten in den Warenkorb legen**
+    - Lege beide Produkte mit jeweils einer ausgewählten Variante in den Warenkorb.
+    - Dokumentiere die gewählten Varianten und die Menge im Testcode.
+    - Kontrollfrage: Werden die Varianten korrekt im Warenkorb übernommen?
+
+    **c) Anzeige und Korrektheit im Warenkorb prüfen**
+    - Prüfe, ob im Warenkorb alle Varianten korrekt angezeigt werden (Farbe, Größe, Produktbild, Produktname, Preis).
+    - Prüfe, ob die Warenkorbsumme stimmt und alle Einzelpreise korrekt berechnet werden.
     - Prüfe, ob die Varianten auch nach Neuladen der Seite erhalten bleiben.
     - Dokumentiere die Anzeige und die Warenkorbsumme als Kommentar.
+    - Kontrollfrage: Bleiben die Varianten nach Neuladen erhalten und stimmen die Summen?
 
-    **c) Kontrollfragen**
+    **d) Kontrollfragen für den Tester**
     - Werden alle Varianten korrekt angezeigt und unterschieden?
     - Stimmen die Produktbilder und -namen zu den Varianten?
     - Bleiben die Varianten nach Neuladen erhalten?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
 
-    **d) Dokumentation und Abschluss**
-    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Variante fehlt", "Bild falsch").
+    **e) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Variante fehlt", "Bild falsch", "Summe stimmt nicht").
     - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
-    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Varianten und Warenkorb funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
 
-    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
-47. Füge ein Produkt zur Wunschliste hinzu, logge dich aus und wieder ein und führe folgende Aufgaben durch:
+    **f) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Varianten und Warenkorb funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
 
-    **a) Produkt zur Wunschliste hinzufügen**
-    - Füge ein Produkt zur Wunschliste hinzu.
-    - Prüfe, ob das Produkt korrekt angezeigt wird.
-    - Dokumentiere das gewählte Produkt im Testcode (als Kommentar).
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Variantenwahl, Warenkorbanzeige und Fehlerbehandlung überprüfen und dokumentieren.
+47. Füge ein Produkt zur Wunschliste hinzu, logge dich aus und wieder ein und führe folgende Aufgaben maximal explizit und einheitlich durch:
 
-    **b) Logout und erneuter Login**
-    - Logge dich aus und wieder ein.
+    **a) Produkt gezielt zur Wunschliste hinzufügen**
+    - Wähle ein Produkt aus und füge es gezielt zur Wunschliste hinzu.
+    - Dokumentiere das gewählte Produkt (Name, Kategorie, Zeitpunkt) im Testcode.
+    - Kontrollfrage: Wird das Produkt sofort und korrekt in der Wunschliste angezeigt?
+
+    **b) Logout und erneuter Login durchführen**
+    - Logge dich aus dem Shop aus und anschließend wieder ein.
     - Prüfe, ob das Produkt weiterhin in der Wunschliste vorhanden ist.
+    - Dokumentiere den Zustand der Wunschliste nach Login im Testcode.
+    - Kontrollfrage: Bleibt das Produkt nach Logout/Login erhalten?
 
-    **c) Synchronisation zwischen Geräten prüfen**
-    - Prüfe, ob die Wunschliste zwischen Geräten synchronisiert wird (z.B. durch Login auf anderem Gerät/Browser).
+    **c) Synchronisation zwischen Geräten/Browsern prüfen**
+    - Logge dich auf einem anderen Gerät oder Browser ein und prüfe, ob die Wunschliste synchronisiert wird.
+    - Dokumentiere die Synchronisation und eventuelle Unterschiede im Testcode.
+    - Kontrollfrage: Wird die Wunschliste überall korrekt angezeigt?
 
-    **d) Anzeige und Funktion prüfen**
+    **d) Anzeige und Funktionalität prüfen**
     - Prüfe, ob die Anzahl der Produkte in der Wunschliste korrekt angezeigt wird.
-    - Prüfe, ob das Hinzufügen/Entfernen ohne Neuladen funktioniert.
+    - Prüfe, ob das Hinzufügen und Entfernen von Produkten ohne Neuladen funktioniert (AJAX, UI-Update).
+    - Dokumentiere die Anzeige und Funktion im Testcode.
+    - Kontrollfrage: Funktioniert das Hinzufügen/Entfernen ohne Neuladen?
 
-    **e) Kontrollfragen**
+    **e) Kontrollfragen für den Tester**
     - Bleibt das Produkt nach Logout/Login erhalten?
     - Wird die Anzahl korrekt angezeigt?
     - Funktioniert das Hinzufügen/Entfernen ohne Neuladen?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
 
-    **f) Dokumentation und Abschluss**
-    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Wunschliste leer nach Login", "Anzahl falsch").
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Wunschliste leer nach Login", "Anzahl falsch", "Synchronisation fehlerhaft").
     - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
-    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Wunschliste funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
 
-    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
-48. Erhöhe und verringere die Anzahl eines Produkts im Warenkorb und führe folgende Aufgaben durch:
-    a) Lege ein Produkt in den Warenkorb und erhöhe die Menge schrittweise (z.B. von 1 auf 5).
-    b) Verringere die Menge wieder (z.B. von 5 auf 1 und dann auf 0).
-    c) Prüfe, ob der Gesamtpreis dynamisch angepasst wird und ob eine Mindest-/Maximalmenge eingehalten wird.
-    d) Prüfe, ob eine Warnung erscheint, wenn die Grenze erreicht ist (z.B. Mindestmenge 1, Maximalmenge 10).
-    e) Prüfe, ob die Änderung ohne Neuladen übernommen wird und ob die Anzeige im Header (z.B. Warenkorb-Icon) stimmt.
-    f) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird der Preis bei jeder Änderung korrekt angepasst?
-        - Erscheint eine Warnung bei ungültigen Mengen?
-        - Bleibt der Warenkorb nach Setzen auf 0 leer?
-    g) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Preis wird nicht angepasst", "Warnung fehlt").
-    h) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Mengenänderung und Preisberechnung funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
-49. Öffne die Warenkorb-Seite in mehreren Browser-Tabs und führe folgende Aufgaben durch:
-    a) Öffne die Warenkorb-Seite in mindestens zwei Browser-Tabs.
-    b) Ändere die Menge eines Produkts in einem Tab und prüfe, ob die Änderung im anderen Tab übernommen wird (Synchronisation).
-    c) Prüfe, ob Konflikte (z.B. gleichzeitige Änderungen) korrekt gelöst werden und ob Fehlermeldungen erscheinen.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird die Änderung in allen Tabs synchron übernommen?
-        - Gibt es Fehlermeldungen oder Konflikte?
-        - Sind die Summen in allen Tabs identisch?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Synchronisation fehlerhaft", "Summe unterschiedlich").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Synchronisation und Konfliktlösung funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
-50. Entferne ein Produkt aus dem Warenkorb und führe folgende Aufgaben durch:
-    a) Lege mehrere Produkte in den Warenkorb.
-    b) Entferne ein Produkt und prüfe, ob die Seite ohne Neuladen aktualisiert wird (AJAX).
-    c) Prüfe, ob die Warenkorbsumme stimmt und das entfernte Produkt wirklich nicht mehr angezeigt wird.
-    d) Prüfe, ob nach Entfernen das Warenkorb-Icon und die Produktanzahl korrekt sind.
-    e) Prüfe, ob kein "leerer Warenkorb" angezeigt wird, wenn noch Produkte vorhanden sind.
-    f) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird die Anzeige nach Entfernen sofort aktualisiert?
-        - Stimmen die Summen und die Produktanzahl?
-        - Bleibt der Warenkorb korrekt gefüllt?
-    g) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produkt bleibt sichtbar", "Summe falsch").
-    h) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Entfernen und Aktualisierung funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
-51. Ändere die Menge eines Produkts im Warenkorb auf einen ungültigen Wert und führe folgende Aufgaben durch:
-    a) Lege ein Produkt in den Warenkorb.
-    b) Ändere die Menge auf einen ungültigen Wert (z.B. Buchstaben, Sonderzeichen, Dezimalzahlen, sehr große oder sehr kleine Werte).
-    c) Prüfe, ob eine Fehlermeldung erscheint und ob die Menge automatisch korrigiert oder zurückgesetzt wird.
-    d) Prüfe, ob der Warenkorb weiterhin benutzbar bleibt und keine Summenfehler entstehen.
-    e) Teste, ob nach Korrektur der Menge wieder alles wie erwartet funktioniert.
-    f) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird für alle ungültigen Werte eine Fehlermeldung angezeigt?
-        - Bleibt der Warenkorb nach Fehler benutzbar?
-        - Entstehen Summenfehler oder bleibt die Anzeige korrekt?
-        - Kann man nach Fehlerbehebung normal weiterarbeiten?
-    g) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Fehlermeldung fehlt", "Summenfehler").
-    h) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Validierung und Fehlerbehandlung funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
-52. Leere den Warenkorb und führe folgende Aufgaben durch:
-    a) Lege mehrere Produkte in den Warenkorb.
-    b) Leere den Warenkorb mit der vorgesehenen Funktion.
-    c) Prüfe, ob eine Bestätigungsmeldung erscheint und der Warenkorb wirklich leer ist.
-    d) Prüfe, ob ein Undo (Rückgängig) möglich ist und ob nach Undo alle Produkte wieder korrekt erscheinen.
-    e) Prüfe, ob die Anzeige im Header und die Summen auf 0 gesetzt werden.
-    f) Teste, ob nach erneutem Leeren und Undo die Anzeige immer korrekt bleibt.
-    g) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird nach Leeren wirklich kein Produkt mehr angezeigt?
-        - Funktioniert Undo in allen Fällen?
-        - Bleibt die Anzeige im Header und die Summen immer korrekt?
-        - Gibt es Fehler bei mehrfacher Nutzung von Leeren/Undo?
-    h) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Undo funktioniert nicht", "Summe bleibt falsch").
-    i) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Leeren und Undo funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Wunschliste funktioniert korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Wunschlisten-Synchronisation, Anzeige und Fehlerbehandlung überprüfen und dokumentieren.
+48. Erhöhe und verringere die Anzahl eines Produkts im Warenkorb und führe folgende Aufgaben maximal explizit und einheitlich durch:
+
+    **a) Produkt in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege ein Produkt in den Warenkorb und prüfe die Ausgangsmenge (z.B. 1).
+    - Dokumentiere Produktname, Startmenge und Preis im Testcode.
+    - Kontrollfrage: Ist die Ausgangsanzeige korrekt?
+
+    **b) Menge schrittweise erhöhen und prüfen**
+    - Erhöhe die Menge des Produkts schrittweise (z.B. von 1 auf 5).
+    - Prüfe nach jedem Schritt, ob der Gesamtpreis dynamisch angepasst wird.
+    - Dokumentiere jede Mengenänderung und den angezeigten Preis im Testcode.
+    - Kontrollfrage: Wird der Preis bei jeder Änderung korrekt angepasst?
+
+    **c) Menge schrittweise verringern und prüfen**
+    - Verringere die Menge wieder (z.B. von 5 auf 1 und dann auf 0).
+    - Prüfe, ob eine Mindestmenge eingehalten wird und ob eine Warnung erscheint, wenn die Grenze erreicht ist (z.B. Mindestmenge 1, Maximalmenge 10).
+    - Dokumentiere jede Mengenänderung, Warnungen und die Anzeige im Testcode.
+    - Kontrollfrage: Erscheint eine Warnung bei ungültigen Mengen?
+
+    **d) Anzeige und Funktionalität prüfen**
+    - Prüfe, ob die Änderung ohne Neuladen übernommen wird (AJAX, UI-Update).
+    - Prüfe, ob die Anzeige im Header (z.B. Warenkorb-Icon, Produktanzahl) stimmt.
+    - Dokumentiere die Anzeige nach jeder Änderung im Testcode.
+    - Kontrollfrage: Bleibt der Warenkorb nach Setzen auf 0 leer?
+
+    **e) Kontrollfragen für den Tester**
+    - Wird der Preis bei jeder Änderung korrekt angepasst?
+    - Erscheint eine Warnung bei ungültigen Mengen?
+    - Bleibt der Warenkorb nach Setzen auf 0 leer?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Preis wird nicht angepasst", "Warnung fehlt", "Anzeige fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Mengenänderung und Preisberechnung funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Mengenänderung, Preisberechnung und Fehlerbehandlung überprüfen und dokumentieren.
+49. Öffne die Warenkorb-Seite in mehreren Browser-Tabs und führe folgende Aufgaben maximal explizit und einheitlich durch:
+
+    **a) Warenkorb-Seite in mehreren Tabs öffnen und Ausgangszustand prüfen**
+    - Öffne die Warenkorb-Seite in mindestens zwei verschiedenen Browser-Tabs.
+    - Prüfe, ob die Anzeige und die Summen in beiden Tabs identisch sind.
+    - Dokumentiere die Ausgangsanzeige und Summen im Testcode.
+    - Kontrollfrage: Sind die Warenkörbe in beiden Tabs identisch?
+
+    **b) Menge eines Produkts in einem Tab ändern und Synchronisation prüfen**
+    - Ändere die Menge eines Produkts in Tab 1 (z.B. erhöhe oder verringere die Menge).
+    - Prüfe, ob die Änderung automatisch und synchron im zweiten Tab übernommen wird.
+    - Dokumentiere die Änderung und die Synchronisation im Testcode.
+    - Kontrollfrage: Wird die Änderung in allen Tabs synchron übernommen?
+
+    **c) Konflikte und Fehlermeldungen bei gleichzeitigen Änderungen prüfen**
+    - Ändere die Menge eines Produkts gleichzeitig in beiden Tabs (z.B. Tab 1 erhöht, Tab 2 verringert).
+    - Prüfe, ob Konflikte korrekt gelöst werden und ob Fehlermeldungen erscheinen.
+    - Dokumentiere das Verhalten und eventuelle Fehlermeldungen im Testcode.
+    - Kontrollfrage: Gibt es Fehlermeldungen oder Konflikte?
+
+    **d) Summen und Anzeige nach Änderungen prüfen**
+    - Prüfe, ob die Summen und die Anzeige nach allen Änderungen in beiden Tabs identisch und korrekt sind.
+    - Dokumentiere die Summen und die Anzeige nach Änderungen im Testcode.
+    - Kontrollfrage: Sind die Summen in allen Tabs identisch?
+
+    **e) Kontrollfragen für den Tester**
+    - Wird die Änderung in allen Tabs synchron übernommen?
+    - Gibt es Fehlermeldungen oder Konflikte?
+    - Sind die Summen in allen Tabs identisch?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Synchronisation fehlerhaft", "Summe unterschiedlich", "Konflikt nicht gelöst").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Synchronisation und Konfliktlösung funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Synchronisation, Konfliktlösung und Fehlerbehandlung überprüfen und dokumentieren.
+50. Entferne ein Produkt aus dem Warenkorb und führe folgende Aufgaben maximal explizit und einheitlich durch:
+
+    **a) Mehrere Produkte in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege mehrere verschiedene Produkte in den Warenkorb.
+    - Prüfe die Ausgangsanzeige, Summen und Produktanzahl.
+    - Dokumentiere die Ausgangsanzeige und Summen im Testcode.
+    - Kontrollfrage: Sind alle Produkte korrekt im Warenkorb?
+
+    **b) Produkt gezielt entfernen und Aktualisierung prüfen**
+    - Entferne gezielt ein Produkt aus dem Warenkorb (z.B. über Button, Icon, Link).
+    - Prüfe, ob die Seite ohne Neuladen aktualisiert wird (AJAX, UI-Update).
+    - Dokumentiere das entfernte Produkt und die Aktualisierung im Testcode.
+    - Kontrollfrage: Wird die Anzeige nach Entfernen sofort aktualisiert?
+
+    **c) Summen, Produktanzahl und Warenkorb-Icon prüfen**
+    - Prüfe, ob die Warenkorbsumme stimmt und das entfernte Produkt wirklich nicht mehr angezeigt wird.
+    - Prüfe, ob nach Entfernen das Warenkorb-Icon und die Produktanzahl korrekt sind.
+    - Dokumentiere die Summen und die Anzeige nach Entfernen im Testcode.
+    - Kontrollfrage: Stimmen die Summen und die Produktanzahl?
+
+    **d) Anzeige bei verbleibenden Produkten und leeren Warenkorb prüfen**
+    - Prüfe, ob kein "leerer Warenkorb" angezeigt wird, wenn noch Produkte vorhanden sind.
+    - Entferne alle Produkte und prüfe, ob die Leermeldung korrekt erscheint.
+    - Dokumentiere die Anzeige nach Entfernen aller Produkte im Testcode.
+    - Kontrollfrage: Bleibt der Warenkorb korrekt gefüllt bzw. wird korrekt geleert?
+
+    **e) Kontrollfragen für den Tester**
+    - Wird die Anzeige nach Entfernen sofort aktualisiert?
+    - Stimmen die Summen und die Produktanzahl?
+    - Bleibt der Warenkorb korrekt gefüllt?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produkt bleibt sichtbar", "Summe falsch", "Leermeldung fehlt").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Entfernen und Aktualisierung funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte des Entfernens, der UI-Aktualisierung und Fehlerbehandlung überprüfen und dokumentieren.
+51. Ändere die Menge eines Produkts im Warenkorb auf einen ungültigen Wert und führe folgende Aufgaben maximal explizit und einheitlich durch:
+
+    **a) Produkt in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege ein Produkt in den Warenkorb und prüfe die Ausgangsanzeige und Menge.
+    - Dokumentiere Produktname, Startmenge und Preis im Testcode.
+    - Kontrollfrage: Ist die Ausgangsanzeige korrekt?
+
+    **b) Menge auf ungültige Werte ändern und Validierung prüfen**
+    - Ändere die Menge auf verschiedene ungültige Werte (z.B. Buchstaben, Sonderzeichen, Dezimalzahlen, sehr große oder sehr kleine Werte).
+    - Prüfe, ob eine Fehlermeldung erscheint und ob die Menge automatisch korrigiert oder zurückgesetzt wird.
+    - Dokumentiere jede Änderung, Fehlermeldung und Korrektur im Testcode.
+    - Kontrollfrage: Wird für alle ungültigen Werte eine Fehlermeldung angezeigt?
+
+    **c) Benutzbarkeit und Summen nach Fehler prüfen**
+    - Prüfe, ob der Warenkorb weiterhin benutzbar bleibt und keine Summenfehler entstehen.
+    - Teste, ob nach Korrektur der Menge wieder alles wie erwartet funktioniert.
+    - Dokumentiere die Anzeige und Summen nach Fehlerbehebung im Testcode.
+    - Kontrollfrage: Bleibt der Warenkorb nach Fehler benutzbar? Entstehen Summenfehler?
+
+    **d) Kontrollfragen für den Tester**
+    - Wird für alle ungültigen Werte eine Fehlermeldung angezeigt?
+    - Bleibt der Warenkorb nach Fehler benutzbar?
+    - Entstehen Summenfehler oder bleibt die Anzeige korrekt?
+    - Kann man nach Fehlerbehebung normal weiterarbeiten?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **e) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Fehlermeldung fehlt", "Summenfehler", "Anzeige fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **f) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Validierung und Fehlerbehandlung funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Validierung, Fehlerbehandlung und Summenprüfung überprüfen und dokumentieren.
+52. Leere den Warenkorb und führe folgende Aufgaben maximal explizit und einheitlich durch:
+
+    **a) Mehrere Produkte in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege mehrere verschiedene Produkte in den Warenkorb.
+    - Prüfe die Ausgangsanzeige, Summen und Produktanzahl.
+    - Dokumentiere die Ausgangsanzeige und Summen im Testcode.
+    - Kontrollfrage: Sind alle Produkte korrekt im Warenkorb?
+
+    **b) Warenkorb mit der vorgesehenen Funktion leeren und Bestätigung prüfen**
+    - Leere den Warenkorb mit der vorgesehenen Funktion (z.B. Button, Link).
+    - Prüfe, ob eine Bestätigungsmeldung erscheint und der Warenkorb wirklich leer ist.
+    - Dokumentiere die Bestätigung und die Anzeige nach Leeren im Testcode.
+    - Kontrollfrage: Wird nach Leeren wirklich kein Produkt mehr angezeigt?
+
+    **c) Undo (Rückgängig) testen und Anzeige prüfen**
+    - Prüfe, ob ein Undo (Rückgängig) möglich ist und ob nach Undo alle Produkte wieder korrekt erscheinen.
+    - Teste Undo mehrfach und prüfe, ob die Anzeige immer korrekt bleibt.
+    - Dokumentiere die Anzeige nach Undo und nach erneutem Leeren im Testcode.
+    - Kontrollfrage: Funktioniert Undo in allen Fällen? Bleibt die Anzeige immer korrekt?
+
+    **d) Anzeige im Header und Summen auf 0 prüfen**
+    - Prüfe, ob die Anzeige im Header (z.B. Warenkorb-Icon, Produktanzahl) und die Summen auf 0 gesetzt werden.
+    - Dokumentiere die Anzeige im Header und die Summen nach Leeren und Undo im Testcode.
+    - Kontrollfrage: Bleibt die Anzeige im Header und die Summen immer korrekt?
+
+    **e) Kontrollfragen für den Tester**
+    - Wird nach Leeren wirklich kein Produkt mehr angezeigt?
+    - Funktioniert Undo in allen Fällen?
+    - Bleibt die Anzeige im Header und die Summen immer korrekt?
+    - Gibt es Fehler bei mehrfacher Nutzung von Leeren/Undo?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Undo funktioniert nicht", "Summe bleibt falsch", "Anzeige fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Leeren und Undo funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte des Leerens, Undo und Fehlerbehandlung überprüfen und dokumentieren.
 53. Lege 10 verschiedene Produkte in den Warenkorb und führe folgende Aufgaben durch:
-    a) Lege nacheinander 10 verschiedene Produkte in den Warenkorb.
-    b) Prüfe, ob alle Produkte korrekt angezeigt werden (Name, Bild, Preis, Menge).
-    c) Prüfe, ob die Warenkorbsumme stimmt und nach Entfernen/Ändern korrekt aktualisiert wird.
-    d) Miss die Ladezeit und prüfe die Performance der Seite (z.B. mit cy.clock/cy.tick oder Browser-Tools).
-    e) Entferne und ändere Produkte und prüfe, ob die Anzeige und Summen immer korrekt bleiben.
-    f) Teste, ob die Seite auch bei vielen Produkten flüssig bleibt (z.B. Scrollen, AJAX-Updates).
-    g) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Werden alle Produkte korrekt angezeigt und aktualisiert?
-        - Bleibt die Performance auch bei vielen Produkten gut?
-        - Gibt es Darstellungs- oder Summenfehler?
-        - Funktionieren Entfernen/Ändern immer korrekt?
-    h) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Performance schlecht", "Produkt bleibt sichtbar").
-    i) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Warenkorb und Performance funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) 10 verschiedene Produkte nacheinander in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege nacheinander 10 verschiedene Produkte in den Warenkorb.
+    - Prüfe die Ausgangsanzeige, Summen und Produktanzahl.
+    - Dokumentiere die Namen, Mengen und Preise der Produkte im Testcode.
+    - Kontrollfrage: Werden alle Produkte korrekt angezeigt?
+
+    **b) Anzeige, Summen und Performance prüfen**
+    - Prüfe, ob alle Produkte korrekt angezeigt werden (Name, Bild, Preis, Menge).
+    - Prüfe, ob die Warenkorbsumme stimmt und nach Entfernen/Ändern korrekt aktualisiert wird.
+    - Miss die Ladezeit und prüfe die Performance der Seite (z.B. mit cy.clock/cy.tick oder Browser-Tools).
+    - Dokumentiere die Summen, Performance und Anzeige im Testcode.
+    - Kontrollfrage: Bleibt die Seite auch bei vielen Produkten flüssig?
+
+    **c) Produkte entfernen/ändern und Anzeige prüfen**
+    - Entferne und ändere Produkte und prüfe, ob die Anzeige und Summen immer korrekt bleiben.
+    - Dokumentiere jede Änderung und die Anzeige im Testcode.
+    - Kontrollfrage: Funktionieren Entfernen/Ändern immer korrekt?
+
+    **d) Kontrollfragen für den Tester**
+    - Werden alle Produkte korrekt angezeigt und aktualisiert?
+    - Bleibt die Performance auch bei vielen Produkten gut?
+    - Gibt es Darstellungs- oder Summenfehler?
+    - Funktionieren Entfernen/Ändern immer korrekt?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **e) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Performance schlecht", "Produkt bleibt sichtbar", "Summe falsch").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **f) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Warenkorb und Performance funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Warenkorbanzeige, Performance und Fehlerbehandlung überprüfen und dokumentieren.
 54. Lege 20 gleiche Produkte in den Warenkorb und führe folgende Aufgaben durch:
-    a) Lege ein Produkt mit der Menge 20 in den Warenkorb.
-    b) Prüfe, ob Mengenrabatte oder Hinweise angezeigt werden (z.B. Rabatt-Badge, durchgestrichener Preis).
-    c) Prüfe, ob die Rabattberechnung korrekt ist und der Rabatt auch nach Mengenänderung erhalten bleibt.
-    d) Prüfe, ob der Rabatt in der Bestellübersicht und im Warenkorb-Icon angezeigt wird.
-    e) Teste, ob der Rabatt auch nach Entfernen/Ändern der Menge korrekt bleibt oder verschwindet.
-    f) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird der Rabatt immer korrekt angezeigt und berechnet?
-        - Bleibt der Rabatt nach Mengenänderung erhalten?
-        - Gibt es Fehler bei der Anzeige oder Berechnung?
-        - Wird der Rabatt überall (Warenkorb, Übersicht, Icon) angezeigt?
-    g) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Rabatt verschwindet", "Berechnung falsch").
-    h) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Mengenrabatt funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Produkt mit Menge 20 in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege ein Produkt mit der Menge 20 in den Warenkorb.
+    - Prüfe die Ausgangsanzeige, Summen und Rabatt-Hinweise.
+    - Dokumentiere Produktname, Menge, Preis und Rabatt im Testcode.
+    - Kontrollfrage: Wird der Rabatt korrekt angezeigt?
+
+    **b) Rabattberechnung und Anzeige prüfen**
+    - Prüfe, ob Mengenrabatte oder Hinweise angezeigt werden (z.B. Rabatt-Badge, durchgestrichener Preis).
+    - Prüfe, ob die Rabattberechnung korrekt ist und der Rabatt auch nach Mengenänderung erhalten bleibt.
+    - Prüfe, ob der Rabatt in der Bestellübersicht und im Warenkorb-Icon angezeigt wird.
+    - Dokumentiere die Rabattberechnung und Anzeige im Testcode.
+    - Kontrollfrage: Wird der Rabatt überall (Warenkorb, Übersicht, Icon) angezeigt?
+
+    **c) Rabatt nach Entfernen/Ändern der Menge prüfen**
+    - Teste, ob der Rabatt auch nach Entfernen/Ändern der Menge korrekt bleibt oder verschwindet.
+    - Dokumentiere die Anzeige und Rabatt nach jeder Änderung im Testcode.
+    - Kontrollfrage: Bleibt der Rabatt nach Mengenänderung erhalten?
+
+    **d) Kontrollfragen für den Tester**
+    - Wird der Rabatt immer korrekt angezeigt und berechnet?
+    - Bleibt der Rabatt nach Mengenänderung erhalten?
+    - Gibt es Fehler bei der Anzeige oder Berechnung?
+    - Wird der Rabatt überall (Warenkorb, Übersicht, Icon) angezeigt?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **e) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Rabatt verschwindet", "Berechnung falsch", "Anzeige fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **f) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Mengenrabatt funktioniert korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Rabattberechnung, Anzeige und Fehlerbehandlung überprüfen und dokumentieren.
 55. Lege 50 verschiedene Produkte in den Warenkorb und führe folgende Aufgaben durch:
-    a) Lege nacheinander 50 verschiedene Produkte in den Warenkorb.
-    b) Prüfe, ob die Seite performant bleibt (z.B. Ladezeit, Scrollen, AJAX-Updates).
-    c) Prüfe, ob die Warenkorbanzeige paginiert wird (z.B. Blätterfunktion, Seitenzahlen).
-    d) Prüfe, ob alle Produkte aufrufbar und entfernbar sind (z.B. durch Blättern, Suche).
-    e) Kontrolliere, ob die Summen und die Anzeige nach Entfernen/Ändern stimmen.
-    f) Teste, ob nach Entfernen/Ändern von Produkten die Anzeige immer korrekt bleibt.
-    g) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Bleibt die Seite auch bei 50 Produkten flüssig und bedienbar?
-        - Funktioniert die Paginierung korrekt?
-        - Sind alle Produkte erreichbar und entfernbar?
-        - Stimmen Summen und Anzeige nach Änderungen?
-    h) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produkt nicht erreichbar", "Paginierung fehlerhaft").
-    i) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Warenkorb mit vielen Produkten funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) 50 verschiedene Produkte nacheinander in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege nacheinander 50 verschiedene Produkte in den Warenkorb.
+    - Prüfe die Ausgangsanzeige, Summen und Produktanzahl.
+    - Dokumentiere die Namen, Mengen und Preise der Produkte im Testcode.
+    - Kontrollfrage: Werden alle Produkte korrekt angezeigt?
+
+    **b) Performance, Paginierung und Anzeige prüfen**
+    - Prüfe, ob die Seite performant bleibt (z.B. Ladezeit, Scrollen, AJAX-Updates).
+    - Prüfe, ob die Warenkorbanzeige paginiert wird (z.B. Blätterfunktion, Seitenzahlen).
+    - Prüfe, ob alle Produkte aufrufbar und entfernbar sind (z.B. durch Blättern, Suche).
+    - Dokumentiere die Performance, Paginierung und Anzeige im Testcode.
+    - Kontrollfrage: Bleibt die Seite auch bei 50 Produkten flüssig und bedienbar?
+
+    **c) Summen und Anzeige nach Entfernen/Ändern prüfen**
+    - Kontrolliere, ob die Summen und die Anzeige nach Entfernen/Ändern stimmen.
+    - Teste, ob nach Entfernen/Ändern von Produkten die Anzeige immer korrekt bleibt.
+    - Dokumentiere jede Änderung und die Anzeige im Testcode.
+    - Kontrollfrage: Stimmen Summen und Anzeige nach Änderungen?
+
+    **d) Kontrollfragen für den Tester**
+    - Bleibt die Seite auch bei 50 Produkten flüssig und bedienbar?
+    - Funktioniert die Paginierung korrekt?
+    - Sind alle Produkte erreichbar und entfernbar?
+    - Stimmen Summen und Anzeige nach Änderungen?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **e) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Produkt nicht erreichbar", "Paginierung fehlerhaft", "Summe falsch").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **f) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Warenkorb mit vielen Produkten funktioniert korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Performance, Paginierung und Fehlerbehandlung überprüfen und dokumentieren.
 56. Lege 100 gleiche Produkte in den Warenkorb und führe folgende Aufgaben durch:
-    a) Lege ein Produkt mit der Menge 100 in den Warenkorb.
-    b) Prüfe, ob eine Begrenzung greift (z.B. maximale Bestellmenge) und eine Warnung erscheint.
-    c) Prüfe, ob die Seite weiterhin bedienbar bleibt (z.B. keine Hänger, keine Fehlermeldungen im UI).
-    d) Reduziere die Menge schrittweise und prüfe, ob die Warnung verschwindet, sobald die Menge wieder im erlaubten Bereich ist.
-    e) Prüfe, ob die Summen und die Anzeige immer korrekt bleiben, auch nach Mengenänderung.
-    f) Teste, ob nach Entfernen/Ändern der Menge die Seite weiterhin flüssig bleibt.
-    g) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird die Begrenzung immer korrekt angewendet?
-        - Bleibt die Seite auch bei 100 Produkten bedienbar?
-        - Verschwindet die Warnung nach Reduzierung der Menge?
-        - Stimmen Summen und Anzeige nach allen Änderungen?
-    h) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Warnung bleibt", "Absturz bei 100 Produkten").
-    i) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Mengenbegrenzung und Performance funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Produkt mit Menge 100 in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege ein Produkt mit der Menge 100 in den Warenkorb.
+    - Prüfe die Ausgangsanzeige, Summen und eventuelle Warnungen.
+    - Dokumentiere Produktname, Menge, Preis und Warnungen im Testcode.
+    - Kontrollfrage: Wird eine Begrenzung/Warnung korrekt angezeigt?
+
+    **b) Begrenzung, Warnung und Bedienbarkeit prüfen**
+    - Prüfe, ob eine Begrenzung greift (z.B. maximale Bestellmenge) und eine Warnung erscheint.
+    - Prüfe, ob die Seite weiterhin bedienbar bleibt (z.B. keine Hänger, keine Fehlermeldungen im UI).
+    - Dokumentiere die Begrenzung, Warnung und Bedienbarkeit im Testcode.
+    - Kontrollfrage: Bleibt die Seite auch bei 100 Produkten bedienbar?
+
+    **c) Menge schrittweise reduzieren und Anzeige prüfen**
+    - Reduziere die Menge schrittweise und prüfe, ob die Warnung verschwindet, sobald die Menge wieder im erlaubten Bereich ist.
+    - Prüfe, ob die Summen und die Anzeige immer korrekt bleiben, auch nach Mengenänderung.
+    - Dokumentiere jede Änderung und die Anzeige im Testcode.
+    - Kontrollfrage: Verschwindet die Warnung nach Reduzierung der Menge? Stimmen Summen und Anzeige?
+
+    **d) Kontrollfragen für den Tester**
+    - Wird die Begrenzung immer korrekt angewendet?
+    - Bleibt die Seite auch bei 100 Produkten bedienbar?
+    - Verschwindet die Warnung nach Reduzierung der Menge?
+    - Stimmen Summen und Anzeige nach allen Änderungen?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **e) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Warnung bleibt", "Absturz bei 100 Produkten", "Anzeige fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **f) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Mengenbegrenzung und Performance funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Mengenbegrenzung, Performance und Fehlerbehandlung überprüfen und dokumentieren.
 57. Führe eine große Bestellung durch und entferne alle Produkte wieder. Führe folgende Aufgaben durch:
-    a) Lege viele verschiedene Produkte in den Warenkorb (z.B. 20+).
-    b) Schließe die Bestellung ab und prüfe, ob sie in der Bestellhistorie erscheint.
-    c) Entferne nach der Bestellung alle Produkte aus dem Warenkorb.
-    d) Prüfe, ob der Warenkorb korrekt geleert wird und keine "offenen" Bestellungen mehr angezeigt werden.
-    e) Prüfe, ob die abgeschlossene Bestellung weiterhin in der Historie sichtbar ist.
-    f) Teste, ob nach erneutem Login/Seitenwechsel die Historie und der Warenkorb korrekt bleiben.
-    g) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird die Bestellung korrekt als abgeschlossen angezeigt?
-        - Bleibt die Historie nach Entfernen der Produkte korrekt?
-        - Gibt es "offene" Bestellungen, obwohl alles entfernt wurde?
-        - Bleibt die Anzeige nach Login/Seitenwechsel korrekt?
-    h) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Bestellung bleibt offen", "Historie fehlerhaft").
-    i) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Bestellhistorie und Warenkorb funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Viele verschiedene Produkte in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege mindestens 20 verschiedene Produkte in den Warenkorb.
+    - Prüfe die Ausgangsanzeige, Summen und Produktanzahl.
+    - Dokumentiere die Namen, Mengen und Preise der Produkte im Testcode.
+    - Kontrollfrage: Sind alle Produkte korrekt im Warenkorb?
+
+    **b) Bestellung abschließen und Bestellhistorie prüfen**
+    - Schließe die Bestellung ab.
+    - Prüfe, ob die Bestellung in der Bestellhistorie erscheint.
+    - Dokumentiere die Bestellnummer, Datum und Produkte in der Historie im Testcode.
+    - Kontrollfrage: Wird die Bestellung korrekt als abgeschlossen angezeigt?
+
+    **c) Produkte nach Bestellung aus dem Warenkorb entfernen und Anzeige prüfen**
+    - Entferne nach der Bestellung alle Produkte aus dem Warenkorb.
+    - Prüfe, ob der Warenkorb korrekt geleert wird und keine "offenen" Bestellungen mehr angezeigt werden.
+    - Dokumentiere die Anzeige nach Entfernen im Testcode.
+    - Kontrollfrage: Bleibt der Warenkorb nach Entfernen leer?
+
+    **d) Historie nach Login/Seitenwechsel prüfen**
+    - Logge dich erneut ein bzw. wechsle die Seite und prüfe, ob die Historie und der Warenkorb korrekt bleiben.
+    - Dokumentiere die Anzeige nach Login/Seitenwechsel im Testcode.
+    - Kontrollfrage: Bleibt die Anzeige nach Login/Seitenwechsel korrekt?
+
+    **e) Kontrollfragen für den Tester**
+    - Wird die Bestellung korrekt als abgeschlossen angezeigt?
+    - Bleibt die Anzeige nach Login/Seitenwechsel korrekt?
+    - Bleibt der Warenkorb nach Entfernen leer?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Bestellung bleibt offen", "Historie fehlerhaft", "Warenkorb nicht geleert").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Bestellhistorie und Warenkorb funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Bestellung, Historie und Fehlerbehandlung überprüfen und dokumentieren.
 58. Führe eine große Bestellung durch und ändere die Mengen im Warenkorb mehrfach. Führe folgende Aufgaben durch:
-    a) Lege viele verschiedene Produkte in den Warenkorb.
-    b) Ändere die Mengen mehrfach (z.B. erhöhen, verringern, auf 0 setzen).
-    c) Prüfe nach jedem Schritt, ob die Preisberechnung und die Summen stimmen.
-    d) Prüfe, ob die Änderungen in der Bestellübersicht übernommen werden und keine alten Werte angezeigt werden.
-    e) Teste, ob nach Aktualisierung/Seitenwechsel die Übersicht immer aktuell bleibt.
-    f) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Stimmen die Summen nach jeder Änderung?
-        - Werden alle Änderungen korrekt übernommen?
-        - Gibt es alte Werte oder Anzeigeprobleme?
-        - Bleibt die Übersicht nach Seitenwechsel aktuell?
-    g) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Summenfehler", "alte Werte bleiben sichtbar").
-    h) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Preisberechnung und Übersicht funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Viele verschiedene Produkte in den Warenkorb legen und Ausgangszustand prüfen**
+    - Lege viele verschiedene Produkte in den Warenkorb.
+    - Prüfe die Ausgangsanzeige, Summen und Produktanzahl.
+    - Dokumentiere die Namen, Mengen und Preise der Produkte im Testcode.
+    - Kontrollfrage: Sind alle Produkte korrekt im Warenkorb?
+
+    **b) Mengen mehrfach ändern und Preisberechnung prüfen**
+    - Ändere die Mengen mehrfach (z.B. erhöhen, verringern, auf 0 setzen).
+    - Prüfe nach jedem Schritt, ob die Preisberechnung und die Summen stimmen.
+    - Dokumentiere jede Mengenänderung und die Summen im Testcode.
+    - Kontrollfrage: Stimmen die Summen nach jeder Änderung?
+
+    **c) Änderungen in der Bestellübersicht prüfen**
+    - Prüfe, ob die Änderungen in der Bestellübersicht übernommen werden und keine alten Werte angezeigt werden.
+    - Dokumentiere die Anzeige und Summen in der Übersicht im Testcode.
+    - Kontrollfrage: Bleibt die Übersicht nach Seitenwechsel aktuell?
+
+    **d) Übersicht nach Aktualisierung/Seitenwechsel prüfen**
+    - Teste, ob nach Aktualisierung/Seitenwechsel die Übersicht immer aktuell bleibt.
+    - Dokumentiere die Anzeige nach Seitenwechsel im Testcode.
+    - Kontrollfrage: Bleibt die Übersicht nach Seitenwechsel aktuell?
+
+    **e) Kontrollfragen für den Tester**
+    - Stimmen die Summen nach jeder Änderung?
+    - Bleibt die Übersicht nach Seitenwechsel aktuell?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Summenfehler", "alte Werte bleiben sichtbar", "Anzeige nicht aktualisiert").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Preisberechnung und Übersicht funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Mengenänderung, Preisberechnung und Fehlerbehandlung überprüfen und dokumentieren.
 59. Entferne ein Produkt aus der Wunschliste und führe folgende Aufgaben durch:
-    a) Öffne die Wunschliste mit mehreren Produkten.
-    b) Entferne ein Produkt und prüfe, ob die Anzahl sofort korrekt aktualisiert wird.
-    c) Prüfe, ob keine Geistereinträge (unsichtbare oder "hängende" Produkte) bleiben.
-    d) Prüfe, ob eine Rückgängig-Funktion angeboten wird und ob nach Rückgängig das Produkt wieder an der richtigen Stelle erscheint.
-    e) Teste, ob die Anzeige nach Entfernen und Rückgängig immer sofort aktualisiert wird.
-    f) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird die Anzahl nach Entfernen und Rückgängig immer korrekt angezeigt?
-        - Gibt es Geistereinträge oder Anzeigeprobleme?
-        - Erscheint das Produkt nach Rückgängig an der richtigen Stelle?
-        - Bleibt die Wunschliste nach mehreren Aktionen korrekt?
-    g) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Geistereintrag bleibt", "Rückgängig funktioniert nicht").
-    h) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Wunschliste und Rückgängig funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Wunschliste mit mehreren Produkten öffnen und Ausgangszustand prüfen**
+    - Öffne die Wunschliste mit mehreren Produkten.
+    - Prüfe die Ausgangsanzeige und Anzahl der Produkte.
+    - Dokumentiere die Namen und Anzahl der Produkte im Testcode.
+    - Kontrollfrage: Sind alle Produkte korrekt sichtbar?
+
+    **b) Produkt entfernen und Aktualisierung prüfen**
+    - Entferne ein Produkt gezielt aus der Wunschliste.
+    - Prüfe, ob die Anzahl sofort korrekt aktualisiert wird.
+    - Dokumentiere das entfernte Produkt und die Anzeige nach Entfernen im Testcode.
+    - Kontrollfrage: Wird die Anzahl nach Entfernen sofort angepasst?
+
+    **c) Geistereinträge und Rückgängig-Funktion prüfen**
+    - Prüfe, ob keine Geistereinträge (unsichtbare oder "hängende" Produkte) bleiben.
+    - Prüfe, ob eine Rückgängig-Funktion angeboten wird und ob nach Rückgängig das Produkt wieder an der richtigen Stelle erscheint.
+    - Dokumentiere die Anzeige nach Rückgängig im Testcode.
+    - Kontrollfrage: Funktioniert Rückgängig korrekt?
+
+    **d) Anzeige nach Entfernen und Rückgängig prüfen**
+    - Teste, ob die Anzeige nach Entfernen und Rückgängig immer sofort aktualisiert wird.
+    - Dokumentiere die Anzeige nach jedem Schritt im Testcode.
+    - Kontrollfrage: Bleibt die Anzeige nach jedem Schritt korrekt?
+
+    **e) Kontrollfragen für den Tester**
+    - Wird die Anzahl nach Entfernen sofort angepasst?
+    - Funktioniert Rückgängig korrekt?
+    - Bleibt die Anzeige nach jedem Schritt korrekt?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **f) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Geistereintrag bleibt", "Rückgängig funktioniert nicht", "Anzeige nicht aktualisiert").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **g) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Wunschliste und Rückgängig funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Wunschlisten-Entfernung, Rückgängig-Funktion und Fehlerbehandlung überprüfen und dokumentieren.
 60. Zeige die Wunschliste an und führe folgende Aufgaben durch:
-    a) Öffne die Wunschliste mit mehreren Produkten.
-    b) Prüfe, ob die Produkte nach Hinzufügungsdatum sortiert sind.
-    c) Prüfe, ob Filter- und Suchfunktion korrekt funktionieren (z.B. Suche nach Produktname, Filter nach Kategorie).
-    d) Prüfe, ob die Anzahl der Produkte immer stimmt, auch nach Hinzufügen/Entfernen.
-    e) Entferne alle Produkte und prüfe, ob die leere Wunschliste korrekt behandelt wird (Hinweistext, keine alten Produkte sichtbar).
-    f) Teste, ob nach erneutem Hinzufügen/Entfernen die Anzeige immer korrekt bleibt.
-    g) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Sind die Produkte immer korrekt sortiert und auffindbar?
-        - Funktionieren Filter und Suche zuverlässig?
-        - Wird die Anzahl immer korrekt angezeigt?
-        - Erscheint bei leerer Liste ein Hinweistext und keine alten Produkte?
-    h) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Hinweistext fehlt", "alte Produkte bleiben sichtbar").
-    i) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Wunschliste und Anzeige funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Wunschliste mit mehreren Produkten öffnen und Ausgangszustand prüfen**
+    - Öffne die Wunschliste mit mehreren Produkten.
+    - Prüfe die Ausgangsanzeige und Anzahl der Produkte.
+    - Dokumentiere die Namen und Anzahl der Produkte im Testcode.
+    - Kontrollfrage: Sind alle Produkte korrekt sichtbar?
+
+    **b) Sortierung, Filter und Suchfunktion prüfen**
+    - Prüfe, ob die Produkte nach Hinzufügungsdatum sortiert sind.
+    - Prüfe, ob Filter- und Suchfunktion korrekt funktionieren (z.B. Suche nach Produktname, Filter nach Kategorie).
+    - Dokumentiere die Sortierung, Filter und Suchfunktion im Testcode.
+    - Kontrollfrage: Sind die Produkte immer korrekt sortiert und auffindbar?
+
+    **c) Anzahl und Anzeige nach Hinzufügen/Entfernen prüfen**
+    - Prüfe, ob die Anzahl der Produkte immer stimmt, auch nach Hinzufügen/Entfernen.
+    - Dokumentiere jede Änderung und die Anzeige im Testcode.
+    - Kontrollfrage: Wird die Anzahl immer korrekt angezeigt?
+
+    **d) Leere Wunschliste und Hinweistext prüfen**
+    - Entferne alle Produkte und prüfe, ob die leere Wunschliste korrekt behandelt wird (Hinweistext, keine alten Produkte sichtbar).
+    - Dokumentiere die Anzeige nach Entfernen aller Produkte im Testcode.
+    - Kontrollfrage: Erscheint bei leerer Liste ein Hinweistext und keine alten Produkte?
+
+    **e) Anzeige nach erneutem Hinzufügen/Entfernen prüfen**
+    - Teste, ob nach erneutem Hinzufügen/Entfernen die Anzeige immer korrekt bleibt.
+    - Dokumentiere die Anzeige nach jedem Schritt im Testcode.
+    - Kontrollfrage: Bleibt die Anzeige nach mehreren Aktionen korrekt?
+
+    **f) Kontrollfragen für den Tester**
+    - Sind die Produkte immer korrekt sortiert und auffindbar?
+    - Funktionieren Filter und Suche zuverlässig?
+    - Wird die Anzahl immer korrekt angezeigt?
+    - Erscheint bei leerer Liste ein Hinweistext und keine alten Produkte?
+    - Bleibt die Anzeige nach mehreren Aktionen korrekt?
+    - Beantworte jede Kontrollfrage im Testcode als Kommentar.
+
+    **g) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Hinweistext fehlt", "alte Produkte bleiben sichtbar", "Anzeige fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **h) Fazit und Abschluss**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+        - "Wunschliste und Anzeige funktionieren korrekt" ODER
+        - "Folgende Probleme gefunden: ..."
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll alle Aspekte der Wunschlisten-Anzeige, Sortierung, Filter, Suche und Fehlerbehandlung überprüfen und dokumentieren.
 
 ### **Level 5: Registrierung & Login**
 61. Registrierung mit gültigen Daten und anschließender E-Mail-Bestätigung (sofern vorhanden). Führe folgende Aufgaben durch:
