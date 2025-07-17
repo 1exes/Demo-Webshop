@@ -125,106 +125,168 @@ Die Testfälle sind in 7 Level eingeteilt.
 
 ### **Level 3: Produktdetails & Filter**
 31. Öffne eine Produktdetailseite aus "Books" und führe folgende Prüfungen und Aufgaben durch (jeden Punkt im Testcode kommentieren und abarbeiten!):
-    a) Öffne die "Books"-Übersichtsseite:
-        - Prüfe, ob die Seite vollständig geladen ist (Header, Footer, Produktliste sichtbar).
-        - Dokumentiere die URL der Übersichtsseite im Testcode.
-        - Kontrollfrage: Sind alle erwarteten Kategorien und Filter sichtbar?
-    b) Wähle ein beliebiges Buch aus (z.B. das erste sichtbare Buch):
-        - Dokumentiere den Namen und Preis des gewählten Buchs als Kommentar.
-        - Prüfe, ob das Buch ein Produktbild und einen Titel hat.
-        - Kontrollfrage: Ist das Buch eindeutig als solches erkennbar?
-    c) Öffne die Produktdetailseite des gewählten Buchs:
-        - Prüfe, ob die URL korrekt ist (enthält z.B. "/books/").
-        - Dokumentiere die URL im Testcode.
-        - Kontrollfrage: Wird der richtige Buchtitel angezeigt?
-    d) Prüfe ALLE Produktbilder (inkl. Thumbnails/Vorschaubilder):
-        - Zähle die Gesamtanzahl der Bilder (z.B. cy.get('.gallery img').should('have.length', X)).
-        - Für jedes Bild:
-            - Prüfe, ob das Bild sichtbar ist (cy.get('img').should('be.visible')).
-            - Prüfe, ob das Bild geladen wurde (naturalWidth > 0).
-            - Prüfe, ob ein Alt-Text gesetzt ist (cy.get('img').should('have.attr', 'alt')).
-            - Dokumentiere für jedes Bild: Dateiname, Alt-Text, Sichtbarkeit, Ladezustand.
-        - Kontrollfrage: Gibt es Bilder ohne Alt-Text, mit leerem Alt-Text oder mit Platzhaltergrafik?
-    e) Prüfe die Bildauflösung und Qualität:
-        - Ermittle für jedes Bild die tatsächliche Größe (z.B. naturalWidth, naturalHeight).
-        - Dokumentiere die Werte im Testcode als Kommentar.
-        - Prüfe, ob mindestens ein Bild eine Auflösung > 300px Breite hat.
-        - Kontrollfrage: Sind alle Bilder scharf und ausreichend groß?
-    f) Prüfe die Funktion der Thumbnails/Vorschaubilder:
-        - Klicke auf jedes Vorschaubild und prüfe, ob das große Bild wechselt.
-        - Dokumentiere, welches Thumbnail welches Hauptbild anzeigt.
-        - Kontrollfrage: Funktioniert der Wechsel bei jedem Thumbnail?
-    g) Prüfe, ob eine Zoomfunktion vorhanden ist:
-        - Suche nach Zoom-Icon, Lupe, Mouseover-Vergrößerung oder "Zoom"-Button.
-        - Wenn ja: Teste, ob die Zoomfunktion das Bild vergrößert (z.B. Lightbox, Overlay, Zoom-in).
-        - Wenn nein: Schreibe im Testcode einen Kommentar "Keine Zoomfunktion vorhanden".
-        - Kontrollfrage: Ist die Zoomfunktion intuitiv bedienbar?
-    h) Prüfe, ob beim Klick auf das Hauptbild eine Lightbox oder ein Overlay erscheint:
-        - Klicke auf das Hauptbild und prüfe, ob ein Overlay/Lightbox erscheint.
-        - Prüfe, ob das Bild in der Lightbox größer angezeigt wird.
-        - Prüfe, ob man in der Lightbox zwischen mehreren Bildern navigieren kann (Next/Prev).
-        - Dokumentiere, falls keine Lightbox vorhanden ist.
-        - Kontrollfrage: Funktioniert die Navigation in der Lightbox fehlerfrei?
-    i) Prüfe Barrierefreiheit der Bilder:
-        - Prüfe, ob alle Bilder einen sinnvollen Alt-Text haben (keine generischen Texte wie "image" oder "pic").
-        - Prüfe, ob die Bilder per Tastatur erreichbar sind (Tab, Enter).
-        - Kontrollfrage: Sind die Bilder für Screenreader zugänglich?
-    j) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Sind alle Bilder thematisch passend zum Produkt?
-        - Gibt es fehlerhafte, leere oder kaputte Bilder?
-        - Sind die Bilder scharf und gut erkennbar?
-        - Gibt es Bilder ohne Alt-Text oder mit falschem Alt-Text?
-        - Funktionieren alle Interaktionen (Klick, Zoom, Lightbox, Thumbnail-Wechsel) wie erwartet?
-    k) Bonus: Prüfe, ob die Seite auch mit deaktiviertem JavaScript die Bilder anzeigt (optional, als Kommentar dokumentieren).
-        - Dokumentiere, ob und wie viele Bilder ohne JavaScript sichtbar sind.
-    l) Dokumentation und Fehlerbehandlung:
-        - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Zoomfunktion fehlt", "Bild 2 ohne Alt-Text", "Thumbnail-Wechsel fehlerhaft").
-        - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
-    m) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
+
+    **a) Übersicht öffnen und prüfen**
+    - Öffne die "Books"-Übersichtsseite.
+    - Prüfe, ob die Seite vollständig geladen ist (Header, Footer, Produktliste sichtbar).
+    - Dokumentiere die URL der Übersichtsseite im Testcode (als Kommentar).
+    - Kontrollfrage: Sind alle erwarteten Kategorien und Filter sichtbar?
+
+    **b) Buch auswählen und prüfen**
+    - Wähle ein beliebiges Buch aus (z.B. das erste sichtbare Buch).
+    - Dokumentiere den Namen und Preis des gewählten Buchs als Kommentar.
+    - Prüfe, ob das Buch ein Produktbild und einen Titel hat.
+    - Kontrollfrage: Ist das Buch eindeutig als solches erkennbar?
+
+    **c) Produktdetailseite prüfen**
+    - Öffne die Produktdetailseite des gewählten Buchs.
+    - Prüfe, ob die URL korrekt ist (enthält z.B. "/books/").
+    - Dokumentiere die URL im Testcode.
+    - Kontrollfrage: Wird der richtige Buchtitel angezeigt?
+
+    **d) Produktbilder prüfen**
+    - Zähle die Gesamtanzahl der Bilder (z.B. cy.get('.gallery img').should('have.length', X)).
+    - Für jedes Bild:
+        - Prüfe, ob das Bild sichtbar ist (cy.get('img').should('be.visible')).
+        - Prüfe, ob das Bild geladen wurde (naturalWidth > 0).
+        - Prüfe, ob ein Alt-Text gesetzt ist (cy.get('img').should('have.attr', 'alt')).
+        - Dokumentiere für jedes Bild: Dateiname, Alt-Text, Sichtbarkeit, Ladezustand.
+    - Kontrollfrage: Gibt es Bilder ohne Alt-Text, mit leerem Alt-Text oder mit Platzhaltergrafik?
+
+    **e) Bildauflösung und Qualität prüfen**
+    - Ermittle für jedes Bild die tatsächliche Größe (z.B. naturalWidth, naturalHeight).
+    - Dokumentiere die Werte im Testcode als Kommentar.
+    - Prüfe, ob mindestens ein Bild eine Auflösung > 300px Breite hat.
+    - Kontrollfrage: Sind alle Bilder scharf und ausreichend groß?
+
+    **f) Thumbnails/Vorschaubilder prüfen**
+    - Klicke auf jedes Vorschaubild und prüfe, ob das große Bild wechselt.
+    - Dokumentiere, welches Thumbnail welches Hauptbild anzeigt.
+    - Kontrollfrage: Funktioniert der Wechsel bei jedem Thumbnail?
+
+    **g) Zoomfunktion prüfen**
+    - Suche nach Zoom-Icon, Lupe, Mouseover-Vergrößerung oder "Zoom"-Button.
+    - Wenn ja: Teste, ob die Zoomfunktion das Bild vergrößert (z.B. Lightbox, Overlay, Zoom-in).
+    - Wenn nein: Schreibe im Testcode einen Kommentar "Keine Zoomfunktion vorhanden".
+    - Kontrollfrage: Ist die Zoomfunktion intuitiv bedienbar?
+
+    **h) Lightbox/Overlay prüfen**
+    - Klicke auf das Hauptbild und prüfe, ob ein Overlay/Lightbox erscheint.
+    - Prüfe, ob das Bild in der Lightbox größer angezeigt wird.
+    - Prüfe, ob man in der Lightbox zwischen mehreren Bildern navigieren kann (Next/Prev).
+    - Dokumentiere, falls keine Lightbox vorhanden ist.
+    - Kontrollfrage: Funktioniert die Navigation in der Lightbox fehlerfrei?
+
+    **i) Barrierefreiheit der Bilder prüfen**
+    - Prüfe, ob alle Bilder einen sinnvollen Alt-Text haben (keine generischen Texte wie "image" oder "pic").
+    - Prüfe, ob die Bilder per Tastatur erreichbar sind (Tab, Enter).
+    - Kontrollfrage: Sind die Bilder für Screenreader zugänglich?
+
+    **j) Kontrollfragen**
+    - Sind alle Bilder thematisch passend zum Produkt?
+    - Gibt es fehlerhafte, leere oder kaputte Bilder?
+    - Sind die Bilder scharf und gut erkennbar?
+    - Gibt es Bilder ohne Alt-Text oder mit falschem Alt-Text?
+    - Funktionieren alle Interaktionen (Klick, Zoom, Lightbox, Thumbnail-Wechsel) wie erwartet?
+
+    **k) Bonus: JavaScript deaktiviert**
+    - Prüfe, ob die Seite auch mit deaktiviertem JavaScript die Bilder anzeigt (optional, als Kommentar dokumentieren).
+    - Dokumentiere, ob und wie viele Bilder ohne JavaScript sichtbar sind.
+
+    **l) Dokumentation und Fehlerbehandlung**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Zoomfunktion fehlt", "Bild 2 ohne Alt-Text", "Thumbnail-Wechsel fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+
+    **m) Fazit und Verbesserungsvorschläge**
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar:
         - "Alle Bilder korrekt angezeigt und geprüft" ODER "Folgende Probleme gefunden: ...".
         - Füge ggf. Verbesserungsvorschläge hinzu (z.B. "Alt-Texte optimieren", "Zoomfunktion ergänzen").
-    n) Hinweis: Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll möglichst viele Aspekte der Produktbilder und deren Darstellung überprüfen, dokumentieren und Verbesserungspotenzial erkennen.
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll möglichst viele Aspekte der Produktbilder und deren Darstellung überprüfen, dokumentieren und Verbesserungspotenzial erkennen.
 32. Prüfe, ob das Produktbild nach Klick auf das Vorschaubild in einer Lightbox angezeigt wird und führe folgende Aufgaben durch:
-    a) Öffne eine Produktdetailseite mit mehreren Vorschaubildern (Thumbnails).
-    b) Klicke auf ein Vorschaubild und prüfe, ob das große Bild wechselt.
-    c) Prüfe, ob beim Klick auf das große Bild eine Lightbox oder ein Overlay erscheint.
-        - Teste, ob das Bild in der Lightbox größer angezeigt wird.
-        - Prüfe, ob man zwischen mehreren Bildern navigieren kann (Next/Prev-Button).
-        - Dokumentiere, falls keine Lightbox vorhanden ist (Kommentar im Test).
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Funktioniert die Navigation zwischen den Bildern reibungslos?
-        - Gibt es Darstellungsfehler oder bleibt ein Bild hängen?
-        - Sind alle Bilder in der Lightbox scharf und vollständig sichtbar?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Lightbox fehlt", "Navigation fehlerhaft").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Lightbox und Navigation funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+
+    **a) Produktdetailseite mit Thumbnails öffnen**
+    - Öffne eine Produktdetailseite mit mehreren Vorschaubildern (Thumbnails).
+    - Dokumentiere die URL und die Anzahl der Vorschaubilder im Testcode (als Kommentar).
+
+    **b) Vorschaubild klicken und Wechsel prüfen**
+    - Klicke auf ein Vorschaubild und prüfe, ob das große Bild wechselt.
+    - Dokumentiere, welches Thumbnail welches Hauptbild anzeigt.
+
+    **c) Lightbox/Overlay prüfen**
+    - Prüfe, ob beim Klick auf das große Bild eine Lightbox oder ein Overlay erscheint.
+    - Teste, ob das Bild in der Lightbox größer angezeigt wird.
+    - Prüfe, ob man zwischen mehreren Bildern navigieren kann (Next/Prev-Button).
+    - Dokumentiere, falls keine Lightbox vorhanden ist (Kommentar im Test).
+
+    **d) Kontrollfragen**
+    - Funktioniert die Navigation zwischen den Bildern reibungslos?
+    - Gibt es Darstellungsfehler oder bleibt ein Bild hängen?
+    - Sind alle Bilder in der Lightbox scharf und vollständig sichtbar?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Lightbox fehlt", "Navigation fehlerhaft").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Lightbox und Navigation funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 33. Prüfe, ob die Produktbeschreibung HTML-Elemente korrekt rendert und führe folgende Aufgaben durch:
-    a) Öffne eine Produktdetailseite mit längerer Beschreibung.
-    b) Prüfe, ob folgende HTML-Elemente korrekt angezeigt werden:
+
+    **a) Produktdetailseite mit Beschreibung öffnen**
+    - Öffne eine Produktdetailseite mit längerer Beschreibung.
+    - Dokumentiere die URL und die Länge der Beschreibung im Testcode (als Kommentar).
+
+    **b) HTML-Elemente prüfen**
+    - Prüfe, ob folgende HTML-Elemente korrekt angezeigt werden:
         - Listen (ul, ol, li)
         - Links (a)
         - Fett/kursiv/unterstrichen (b, strong, i, em, u)
         - Überschriften (h1–h6)
-    c) Prüfe, ob externe Links in einem neuen Tab geöffnet werden (target="_blank").
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Gibt es fehlerhafte oder falsch formatierte Elemente?
-        - Sind alle Links klickbar und führen zur richtigen Seite?
-        - Werden Listen und Formatierungen wie erwartet angezeigt?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Link öffnet nicht im neuen Tab", "Liste nicht korrekt gerendert").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Alle HTML-Elemente korrekt gerendert" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    - Dokumentiere für jedes Element, ob es korrekt angezeigt wird (als Kommentar).
+
+    **c) Externe Links prüfen**
+    - Prüfe, ob externe Links in einem neuen Tab geöffnet werden (target="_blank").
+
+    **d) Kontrollfragen**
+    - Gibt es fehlerhafte oder falsch formatierte Elemente?
+    - Sind alle Links klickbar und führen zur richtigen Seite?
+    - Werden Listen und Formatierungen wie erwartet angezeigt?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Link öffnet nicht im neuen Tab", "Liste nicht korrekt gerendert").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Alle HTML-Elemente korrekt gerendert" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 34. Prüfe, ob der Preis korrekt angezeigt wird und sich bei Auswahl verschiedener Produktvarianten ändert. Führe folgende Aufgaben durch:
-    a) Öffne eine Produktdetailseite mit mehreren Varianten (z.B. Hardcover/Taschenbuch, Farbe, Größe).
-    b) Prüfe, ob der Preis für jede Variante korrekt angezeigt wird.
-        - Wähle mindestens zwei verschiedene Varianten aus und notiere die Preise im Test (als Kommentar).
-        - Prüfe, ob Rabatte oder Sonderpreise korrekt angezeigt werden (z.B. durchgestrichener Preis, Rabatt-Badge).
-    c) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Ändert sich der Preis sichtbar beim Wechsel der Variante?
-        - Werden Rabatte korrekt berechnet und angezeigt?
-        - Gibt es Varianten ohne Preis oder mit fehlerhafter Anzeige?
-    d) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Rabatt wird nicht angezeigt", "Preis ändert sich nicht").
-    e) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Preise und Rabatte korrekt angezeigt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+    **a) Produktdetailseite mit Varianten öffnen**
+    - Öffne eine Produktdetailseite, die mehrere Varianten bietet (z.B. Hardcover/Taschenbuch, verschiedene Farben oder Größen).
+    - Dokumentiere die gewählte Produktseite und die verfügbaren Varianten im Testcode (als Kommentar).
+
+    **b) Preis für jede Variante prüfen**
+    - Wähle nacheinander jede Variante aus (z.B. Hardcover, Taschenbuch, verschiedene Farben/Größen).
+    - Prüfe, ob der angezeigte Preis sich jeweils korrekt ändert.
+    - Dokumentiere für jede Variante den angezeigten Preis im Testcode (als Kommentar).
+    - Prüfe, ob Rabatte oder Sonderpreise korrekt angezeigt werden (z.B. durchgestrichener Preis, Rabatt-Badge).
+    - Dokumentiere Rabatte und Sonderpreise im Testcode.
+
+    **c) Preisänderung bei Wechsel testen**
+    - Wechsle mehrfach zwischen den Varianten und prüfe, ob der Preis immer korrekt aktualisiert wird.
+    - Prüfe, ob es Darstellungsfehler, Verzögerungen oder falsche Preise gibt.
+    - Dokumentiere Auffälligkeiten und Fehler im Testcode.
+
+    **d) Kontrollfragen**
+    - Wird der Preis bei jeder Variante korrekt angezeigt?
+    - Bleibt der Preis nach Wechsel immer aktuell?
+    - Werden Rabatte korrekt berechnet und angezeigt?
+    - Gibt es Varianten ohne Preis oder mit fehlerhafter Anzeige?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Preis wird nicht aktualisiert", "Variante ohne Preis").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Preis und Varianten funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 35. Prüfe, ob Bewertungen angezeigt werden und die Sortierung funktioniert. Führe folgende Aufgaben durch:
     a) Öffne eine Produktdetailseite mit vorhandenen Bewertungen.
     b) Prüfe, ob die Bewertungen nach "Hilfreichste" und "Neueste" sortiert werden können.
@@ -352,28 +414,58 @@ Die Testfälle sind in 7 Level eingeteilt.
 
 ### **Level 4: Warenkorb & Wunschliste**
 46. Lege mehrere Produkte mit unterschiedlichen Varianten (z.B. Größe, Farbe) in den Warenkorb und führe folgende Aufgaben durch:
-    a) Wähle mindestens zwei Produkte mit unterschiedlichen Varianten (z.B. verschiedene Farben/Größen) aus und lege sie in den Warenkorb.
-    b) Prüfe, ob im Warenkorb alle Varianten korrekt angezeigt werden (z.B. richtige Farbe/Größe, Produktbild, Produktname).
-    c) Prüfe, ob die Warenkorbsumme stimmt und die Varianten auch nach Neuladen der Seite erhalten bleiben.
-    d) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Werden alle Varianten korrekt angezeigt und unterschieden?
-        - Stimmen die Produktbilder und -namen zu den Varianten?
-        - Bleiben die Varianten nach Neuladen erhalten?
-    e) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Variante fehlt", "Bild falsch").
-    f) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Varianten und Warenkorb funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+
+    **a) Produkte und Varianten auswählen**
+    - Wähle mindestens zwei Produkte mit unterschiedlichen Varianten (z.B. verschiedene Farben/Größen) aus.
+    - Lege beide Produkte in den Warenkorb.
+    - Dokumentiere die gewählten Varianten und Produkte im Testcode (als Kommentar).
+
+    **b) Anzeige im Warenkorb prüfen**
+    - Prüfe, ob im Warenkorb alle Varianten korrekt angezeigt werden (Farbe, Größe, Produktbild, Produktname).
+    - Prüfe, ob die Warenkorbsumme stimmt.
+    - Prüfe, ob die Varianten auch nach Neuladen der Seite erhalten bleiben.
+    - Dokumentiere die Anzeige und die Warenkorbsumme als Kommentar.
+
+    **c) Kontrollfragen**
+    - Werden alle Varianten korrekt angezeigt und unterschieden?
+    - Stimmen die Produktbilder und -namen zu den Varianten?
+    - Bleiben die Varianten nach Neuladen erhalten?
+
+    **d) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Variante fehlt", "Bild falsch").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Varianten und Warenkorb funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 47. Füge ein Produkt zur Wunschliste hinzu, logge dich aus und wieder ein und führe folgende Aufgaben durch:
-    a) Füge ein Produkt zur Wunschliste hinzu und prüfe, ob es korrekt angezeigt wird.
-    b) Logge dich aus und wieder ein. Prüfe, ob das Produkt weiterhin in der Wunschliste vorhanden ist.
-    c) Prüfe, ob die Wunschliste zwischen Geräten synchronisiert wird (z.B. durch Login auf anderem Gerät/Browser).
-    d) Prüfe, ob die Anzahl der Produkte in der Wunschliste korrekt angezeigt wird und ob das Hinzufügen/Entfernen ohne Neuladen funktioniert.
-    e) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Bleibt das Produkt nach Logout/Login erhalten?
-        - Wird die Anzahl korrekt angezeigt?
-        - Funktioniert das Hinzufügen/Entfernen ohne Neuladen?
-    f) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Wunschliste leer nach Login", "Anzahl falsch").
-    g) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Wunschliste funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+
+    **a) Produkt zur Wunschliste hinzufügen**
+    - Füge ein Produkt zur Wunschliste hinzu.
+    - Prüfe, ob das Produkt korrekt angezeigt wird.
+    - Dokumentiere das gewählte Produkt im Testcode (als Kommentar).
+
+    **b) Logout und erneuter Login**
+    - Logge dich aus und wieder ein.
+    - Prüfe, ob das Produkt weiterhin in der Wunschliste vorhanden ist.
+
+    **c) Synchronisation zwischen Geräten prüfen**
+    - Prüfe, ob die Wunschliste zwischen Geräten synchronisiert wird (z.B. durch Login auf anderem Gerät/Browser).
+
+    **d) Anzeige und Funktion prüfen**
+    - Prüfe, ob die Anzahl der Produkte in der Wunschliste korrekt angezeigt wird.
+    - Prüfe, ob das Hinzufügen/Entfernen ohne Neuladen funktioniert.
+
+    **e) Kontrollfragen**
+    - Bleibt das Produkt nach Logout/Login erhalten?
+    - Wird die Anzahl korrekt angezeigt?
+    - Funktioniert das Hinzufügen/Entfernen ohne Neuladen?
+
+    **f) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Wunschliste leer nach Login", "Anzahl falsch").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Wunschliste funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 48. Erhöhe und verringere die Anzahl eines Produkts im Warenkorb und führe folgende Aufgaben durch:
     a) Lege ein Produkt in den Warenkorb und erhöhe die Menge schrittweise (z.B. von 1 auf 5).
     b) Verringere die Menge wieder (z.B. von 5 auf 1 und dann auf 0).
@@ -628,32 +720,63 @@ Die Testfälle sind in 7 Level eingeteilt.
     g) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Passwortvalidierung funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
     Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 66. Registrierung mit zu langem Namen (>255 Zeichen). Führe folgende Aufgaben durch:
-    a) Öffne die Registrierungsseite und gib in das Namensfeld einen sehr langen Namen (>255 Zeichen) ein.
-    b) Prüfe, ob eine Begrenzung greift (z.B. keine weiteren Zeichen möglich oder automatische Kürzung).
-    c) Prüfe, ob eine Fehlermeldung erscheint und das Feld nach Fehler rot markiert wird.
-    d) Korrigiere den Namen auf eine gültige Länge und prüfe, ob die Registrierung dann möglich ist.
-    e) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird die Begrenzung immer angewendet?
-        - Erscheint eine Fehlermeldung bei zu langem Namen?
-        - Wird das Feld nach Fehler rot markiert?
-        - Ist die Registrierung nach Korrektur möglich?
-    f) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Begrenzung fehlt", "Fehlermeldung fehlt").
-    g) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Namensbegrenzung funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+
+    **a) Testdaten eingeben**
+    - Öffne die Registrierungsseite.
+    - Gib in das Namensfeld einen sehr langen Namen (>255 Zeichen) ein.
+    - Dokumentiere die verwendeten Testdaten im Testcode (als Kommentar).
+
+    **b) Begrenzung und Validierung prüfen**
+    - Prüfe, ob eine Begrenzung greift (z.B. keine weiteren Zeichen möglich oder automatische Kürzung).
+    - Prüfe, ob eine Fehlermeldung erscheint und das Feld nach Fehler rot markiert wird.
+    - Dokumentiere die Begrenzung und die Fehlermeldung als Kommentar.
+
+    **c) Korrektur und erneute Prüfung**
+    - Korrigiere den Namen auf eine gültige Länge.
+    - Prüfe, ob die Registrierung dann möglich ist.
+
+    **d) Kontrollfragen**
+    - Wird die Begrenzung immer angewendet?
+    - Erscheint eine Fehlermeldung bei zu langem Namen?
+    - Wird das Feld nach Fehler rot markiert?
+    - Ist die Registrierung nach Korrektur möglich?
+
+    **e) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Begrenzung fehlt", "Fehlermeldung fehlt").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Namensbegrenzung funktioniert korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 67. Login mit gültigen Daten. Führe folgende Aufgaben durch:
-    a) Öffne die Login-Seite und gib gültige Zugangsdaten ein.
-    b) Prüfe, ob nach Login ein Session-Cookie gesetzt wird.
-    c) Prüfe, ob der Benutzername im Header, auf der Profilseite und in der Bestellübersicht korrekt angezeigt wird.
-    d) Starte den Browser neu und prüfe, ob die Session erhalten bleibt und der Login weiterhin aktiv ist.
-    e) Teste den Login auf verschiedenen Seiten (z.B. Startseite, Warenkorb, Profil).
-    f) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Wird der Benutzername überall korrekt angezeigt?
-        - Bleibt die Session nach Browser-Neustart erhalten?
-        - Funktioniert der Login auf allen Seiten?
-        - Gibt es Fehler oder Abweichungen?
-    g) Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Session geht verloren", "Name fehlt im Header").
-    h) Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Login und Session funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
-    Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
+
+    **a) Login durchführen**
+    - Öffne die Login-Seite.
+    - Gib gültige Zugangsdaten ein.
+    - Dokumentiere die verwendeten Testdaten im Testcode (als Kommentar).
+
+    **b) Session und Anzeige prüfen**
+    - Prüfe, ob nach Login ein Session-Cookie gesetzt wird.
+    - Prüfe, ob der Benutzername im Header, auf der Profilseite und in der Bestellübersicht korrekt angezeigt wird.
+    - Dokumentiere die Sessiondaten (z.B. Cookie-Name, Ablaufzeit) als Kommentar.
+
+    **c) Browser-Neustart und Sessionkontrolle**
+    - Starte den Browser neu und prüfe, ob die Session erhalten bleibt und der Login weiterhin aktiv ist.
+
+    **d) Login auf verschiedenen Seiten testen**
+    - Teste den Login auf verschiedenen Seiten (z.B. Startseite, Warenkorb, Profil).
+
+    **e) Kontrollfragen**
+    - Wird der Benutzername überall korrekt angezeigt?
+    - Bleibt die Session nach Browser-Neustart erhalten?
+    - Funktioniert der Login auf allen Seiten?
+    - Gibt es Fehler oder Abweichungen?
+
+    **f) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Session geht verloren", "Name fehlt im Header").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein kurzes Fazit als Kommentar: "Login und Session funktionieren korrekt" ODER "Folgende Probleme gefunden: ...".
+
+    > **Hinweis:** Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 68. Login mit ungültigem Passwort. Führe folgende Aufgaben durch:
     a) Öffne die Login-Seite und gib eine gültige E-Mail mit einem ungültigen Passwort ein.
     b) Prüfe, ob keine Session erstellt wird und eine Fehlermeldung erscheint.
@@ -1310,68 +1433,80 @@ Die Testfälle sind in 7 Level eingeteilt.
     Hinweis: Jeder Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein!
 
 100. Abschlusstest: Führe einen vollständigen End-to-End-Test durch und dokumentiere jeden Schritt explizit:
-    a) Registrierung mit neuen Nutzerdaten:
-        - Öffne die Registrierungsseite und fülle alle Pflichtfelder mit realistischen, aber fiktiven Daten aus.
-        - Prüfe, ob für jedes Feld eine Validierung erfolgt (z.B. E-Mail-Format, Passwortregeln, Pflichtfelder).
-        - Dokumentiere die verwendeten Testdaten im Testcode (als Kommentar, keine echten Daten!).
-        - Sende das Formular ab und prüfe, ob eine Bestätigungsmail versendet wird (Mock/Log prüfen).
-        - Öffne die Bestätigungsmail, prüfe den Link und klicke ihn an.
-        - Kontrollfragen: Sind alle Validierungen verständlich? Kommt die Mail korrekt an? Ist der Link nur einmal nutzbar?
-    b) Login mit den neuen Daten:
-        - Logge dich mit den neuen Zugangsdaten ein.
-        - Prüfe, ob die Session korrekt gesetzt wird (Cookie, Header, Profilseite).
-        - Kontrolliere, ob der Benutzername überall korrekt angezeigt wird.
-        - Dokumentiere die Sessiondaten (z.B. Cookie-Name, Ablaufzeit) als Kommentar.
-    c) Produktsuche und Navigation:
-        - Suche nach mindestens drei verschiedenen Produkten aus unterschiedlichen Kategorien (z.B. "Book", "Computer", "Gift Card").
-        - Prüfe, ob die Suchergebnisse korrekt sind (Anzahl, Titel, Preis, Kategorie).
-        - Öffne jeweils die Produktdetailseite und dokumentiere die wichtigsten Produktdaten (Name, Preis, Kategorie, Bild).
-        - Kontrollfragen: Sind alle Suchergebnisse relevant? Gibt es fehlerhafte oder doppelte Einträge?
-    d) Produkte in den Warenkorb legen:
-        - Lege mindestens 10 Produkte aus verschiedenen Kategorien in den Warenkorb (verschiedene Varianten, Mengen, Farben, Größen).
-        - Prüfe nach jedem Hinzufügen, ob die Warenkorbanzeige (Icon, Summe, Anzahl) sofort aktualisiert wird.
-        - Dokumentiere für jedes Produkt: Name, Variante, Menge, Preis, Kategorie.
-        - Kontrollfragen: Werden alle Produkte korrekt angezeigt? Stimmen die Summen und Rabatte?
-    e) Warenkorb und Checkout vorbereiten:
-        - Öffne den Warenkorb und prüfe, ob alle Produkte mit korrekten Varianten, Mengen und Preisen angezeigt werden.
-        - Kontrolliere, ob die Gesamtsumme stimmt und alle Rabatte/Versandkosten korrekt berechnet werden.
-        - Prüfe, ob Produktbilder, Namen und Varianten eindeutig zuordenbar sind.
-        - Dokumentiere Auffälligkeiten (z.B. "Rabatt fehlt", "Bild falsch").
-    f) Checkout durchführen:
-        - Gehe zur Kasse und prüfe, ob alle Pflichtfelder (Adresse, Versandart, Zahlungsart) vorausgefüllt oder korrekt leer sind.
-        - Lasse absichtlich ein Pflichtfeld leer und prüfe, ob eine Fehlermeldung erscheint und das Feld markiert wird.
-        - Fülle alle Felder korrekt aus und dokumentiere die eingegebenen Daten (als Kommentar, keine echten Daten verwenden!).
-        - Wähle verschiedene Versand- und Zahlungsarten aus und prüfe, ob sich die Gesamtsumme und die Anzeige entsprechend ändern.
-        - Teste mindestens zwei verschiedene Kombinationen und dokumentiere die Unterschiede.
-        - Kontrollfragen: Werden alle Pflichtfelder validiert? Stimmen alle Summen, Rabatte und Versandkosten?
-    g) Bestellung abschließen:
-        - Schließe die Bestellung ab und prüfe, ob eine Bestellbestätigung erscheint (Seite, E-Mail, Bestellnummer).
-        - Kontrolliere, ob die Bestelldaten in der Bestellhistorie korrekt übernommen werden.
-        - Prüfe, ob die Session nach Abschluss erhalten bleibt und der Nutzer eingeloggt bleibt.
-        - Dokumentiere die Bestellnummer, Bestelldaten und E-Mail-Inhalt als Kommentar.
-        - Kontrollfragen: Sind alle Daten korrekt? Kommt die Bestätigungsmail an? Gibt es Fehler im Ablauf?
-    h) Nachkontrolle und Logout:
-        - Öffne die Bestellhistorie und prüfe, ob die abgeschlossene Bestellung korrekt und vollständig angezeigt wird.
-        - Logge dich aus und prüfe, ob nach Logout keine Daten mehr sichtbar sind (Warenkorb, Historie, Header).
-        - Versuche, auf geschützte Seiten zuzugreifen und prüfe, ob ein Redirect zum Login erfolgt.
-        - Logge dich erneut ein und prüfe, ob alle Daten korrekt angezeigt werden (Historie, Profil, Warenkorb leer).
-        - Kontrollfragen: Bleibt der Warenkorb nach Logout leer? Ist die Historie nach Login/Logout immer korrekt?
-    i) Sicherheits- und Integritätschecks:
-        - Prüfe, ob keine sensiblen Daten (z.B. Passwörter, Zahlungsdaten) in E-Mails, UI oder Netzwerk sichtbar sind.
-        - Teste, ob nach jedem Schritt keine Datenlecks oder Sicherheitslücken auftreten (z.B. Session-Fixation, CSRF, XSS).
-        - Dokumentiere alle sicherheitsrelevanten Auffälligkeiten als Kommentar.
-    j) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!):
-        - Funktioniert jeder Schritt ohne Fehler und wie erwartet?
-        - Sind alle Daten nach jedem Schritt korrekt und konsistent?
-        - Gibt es Sicherheitslücken, Datenlecks oder unklare Abläufe?
-        - Sind alle E-Mails korrekt, vollständig und ohne sensible Daten?
-        - Gibt es Fehler, Unklarheiten oder fehlende Features?
-    k) Dokumentation und Abschluss:
-        - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Mail fehlt", "Historie fehlerhaft", "Daten nach Logout sichtbar").
-        - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
-        - Schreibe am Ende des Tests ein ausführliches Fazit als Kommentar: "Abschlusstest erfolgreich, alle Funktionen korrekt" ODER "Folgende Probleme gefunden: ...".
-        - Füge ggf. Verbesserungsvorschläge hinzu (z.B. "Validierung optimieren", "Sicherheitslücke melden").
-    Hinweis: Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll den gesamten Ablauf, alle Datenflüsse, Sicherheitsaspekte und die Nutzererfahrung maximal detailliert prüfen und dokumentieren. Jeder Schritt, jede Entscheidung und jede Auffälligkeit muss im Testcode sichtbar und begründet sein.
+
+    **a) Registrierung mit neuen Nutzerdaten**
+    - Öffne die Registrierungsseite und fülle alle Pflichtfelder mit realistischen, aber fiktiven Daten aus.
+    - Prüfe, ob für jedes Feld eine Validierung erfolgt (z.B. E-Mail-Format, Passwortregeln, Pflichtfelder).
+    - Dokumentiere die verwendeten Testdaten im Testcode (als Kommentar, keine echten Daten!).
+    - Sende das Formular ab und prüfe, ob eine Bestätigungsmail versendet wird (Mock/Log prüfen).
+    - Öffne die Bestätigungsmail, prüfe den Link und klicke ihn an.
+    - **Kontrollfragen:** Sind alle Validierungen verständlich? Kommt die Mail korrekt an? Ist der Link nur einmal nutzbar?
+
+    **b) Login mit den neuen Daten**
+    - Logge dich mit den neuen Zugangsdaten ein.
+    - Prüfe, ob die Session korrekt gesetzt wird (Cookie, Header, Profilseite).
+    - Kontrolliere, ob der Benutzername überall korrekt angezeigt wird.
+    - Dokumentiere die Sessiondaten (z.B. Cookie-Name, Ablaufzeit) als Kommentar.
+
+    **c) Produktsuche und Navigation**
+    - Suche nach mindestens drei verschiedenen Produkten aus unterschiedlichen Kategorien (z.B. "Book", "Computer", "Gift Card").
+    - Prüfe, ob die Suchergebnisse korrekt sind (Anzahl, Titel, Preis, Kategorie).
+    - Öffne jeweils die Produktdetailseite und dokumentiere die wichtigsten Produktdaten (Name, Preis, Kategorie, Bild).
+    - **Kontrollfragen:** Sind alle Suchergebnisse relevant? Gibt es fehlerhafte oder doppelte Einträge?
+
+    **d) Produkte in den Warenkorb legen**
+    - Lege mindestens 10 Produkte aus verschiedenen Kategorien in den Warenkorb (verschiedene Varianten, Mengen, Farben, Größen).
+    - Prüfe nach jedem Hinzufügen, ob die Warenkorbanzeige (Icon, Summe, Anzahl) sofort aktualisiert wird.
+    - Dokumentiere für jedes Produkt: Name, Variante, Menge, Preis, Kategorie.
+    - **Kontrollfragen:** Werden alle Produkte korrekt angezeigt? Stimmen die Summen und Rabatte?
+
+    **e) Warenkorb und Checkout vorbereiten**
+    - Öffne den Warenkorb und prüfe, ob alle Produkte mit korrekten Varianten, Mengen und Preisen angezeigt werden.
+    - Kontrolliere, ob die Gesamtsumme stimmt und alle Rabatte/Versandkosten korrekt berechnet werden.
+    - Prüfe, ob Produktbilder, Namen und Varianten eindeutig zuordenbar sind.
+    - Dokumentiere Auffälligkeiten (z.B. "Rabatt fehlt", "Bild falsch").
+
+    **f) Checkout durchführen**
+    - Gehe zur Kasse und prüfe, ob alle Pflichtfelder (Adresse, Versandart, Zahlungsart) vorausgefüllt oder korrekt leer sind.
+    - Lasse absichtlich ein Pflichtfeld leer und prüfe, ob eine Fehlermeldung erscheint und das Feld markiert wird.
+    - Fülle alle Felder korrekt aus und dokumentiere die eingegebenen Daten (als Kommentar, keine echten Daten verwenden!).
+    - Wähle verschiedene Versand- und Zahlungsarten aus und prüfe, ob sich die Gesamtsumme und die Anzeige entsprechend ändern.
+    - Teste mindestens zwei verschiedene Kombinationen und dokumentiere die Unterschiede.
+    - **Kontrollfragen:** Werden alle Pflichtfelder validiert? Stimmen alle Summen, Rabatte und Versandkosten?
+
+    **g) Bestellung abschließen**
+    - Schließe die Bestellung ab und prüfe, ob eine Bestellbestätigung erscheint (Seite, E-Mail, Bestellnummer).
+    - Kontrolliere, ob die Bestelldaten in der Bestellhistorie korrekt übernommen werden.
+    - Prüfe, ob die Session nach Abschluss erhalten bleibt und der Nutzer eingeloggt bleibt.
+    - Dokumentiere die Bestellnummer, Bestelldaten und E-Mail-Inhalt als Kommentar.
+    - **Kontrollfragen:** Sind alle Daten korrekt? Kommt die Bestätigungsmail an? Gibt es Fehler im Ablauf?
+
+    **h) Nachkontrolle und Logout**
+    - Öffne die Bestellhistorie und prüfe, ob die abgeschlossene Bestellung korrekt und vollständig angezeigt wird.
+    - Logge dich aus und prüfe, ob nach Logout keine Daten mehr sichtbar sind (Warenkorb, Historie, Header).
+    - Versuche, auf geschützte Seiten zuzugreifen und prüfe, ob ein Redirect zum Login erfolgt.
+    - Logge dich erneut ein und prüfe, ob alle Daten korrekt angezeigt werden (Historie, Profil, Warenkorb leer).
+    - **Kontrollfragen:** Bleibt der Warenkorb nach Logout leer? Ist die Historie nach Login/Logout immer korrekt?
+
+    **i) Sicherheits- und Integritätschecks**
+    - Prüfe, ob keine sensiblen Daten (z.B. Passwörter, Zahlungsdaten) in E-Mails, UI oder Netzwerk sichtbar sind.
+    - Teste, ob nach jedem Schritt keine Datenlecks oder Sicherheitslücken auftreten (z.B. Session-Fixation, CSRF, XSS).
+    - Dokumentiere alle sicherheitsrelevanten Auffälligkeiten als Kommentar.
+
+    **j) Kontrollfragen für den Tester (im Testcode als Kommentar beantworten!)**
+    - Funktioniert jeder Schritt ohne Fehler und wie erwartet?
+    - Sind alle Daten nach jedem Schritt korrekt und konsistent?
+    - Gibt es Sicherheitslücken, Datenlecks oder unklare Abläufe?
+    - Sind alle E-Mails korrekt, vollständig und ohne sensible Daten?
+    - Gibt es Fehler, Unklarheiten oder fehlende Features?
+
+    **k) Dokumentation und Abschluss**
+    - Dokumentiere alle Auffälligkeiten, Fehler oder fehlende Features im Testcode als Kommentar (z.B. "Mail fehlt", "Historie fehlerhaft", "Daten nach Logout sichtbar").
+    - Notiere für jeden Prüfschritt, ob er bestanden wurde (z.B. // OK oder // FEHLER: ...).
+    - Schreibe am Ende des Tests ein ausführliches Fazit als Kommentar: "Abschlusstest erfolgreich, alle Funktionen korrekt" ODER "Folgende Probleme gefunden: ...".
+    - Füge ggf. Verbesserungsvorschläge hinzu (z.B. "Validierung optimieren", "Sicherheitslücke melden").
+
+    > **Hinweis:** Jeder einzelne Prüfschritt muss im Testcode nachvollziehbar und kommentiert sein! Ziel: Der Tester soll den gesamten Ablauf, alle Datenflüsse, Sicherheitsaspekte und die Nutzererfahrung maximal detailliert prüfen und dokumentieren. Jeder Schritt, jede Entscheidung und jede Auffälligkeit muss im Testcode sichtbar und begründet sein.
 
 ---
 
