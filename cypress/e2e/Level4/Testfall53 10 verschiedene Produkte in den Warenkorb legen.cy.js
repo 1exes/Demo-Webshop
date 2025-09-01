@@ -2,7 +2,7 @@ describe('Großbestellung mit 10 Produkten', () => {
   it('legt 10 verschiedene Produkte in den Warenkorb', () => {
     cy.visit('https://demowebshop.tricentis.com/');
 
-    cy.contains('Books').click();
+    cy.contains('Books').click()
     cy.contains('Computing and Internet').click();
     cy.get('#add-to-cart-button-13').click();
 
