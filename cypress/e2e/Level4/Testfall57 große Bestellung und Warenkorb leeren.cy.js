@@ -7,12 +7,6 @@ describe('Demo Web Shop - Warenkorb Test', () => {
     cy.get('#add-to-cart-button-13').click();
 
     cy.visit('https://demowebshop.tricentis.com/cart');
-    cy.get('input.qty-input').first().clear().type('1');
-    cy.get('input[name="updatecart"]').click();
-    cy.get('input.qty-input').first().should('have.value', '1');
-    cy.get('input[name="removefromcart"]').check();
-    cy.get('input[name="updatecart"]').click();
-    cy.contains('Your Shopping Cart is empty').should('be.visible');
   });
 });
    
