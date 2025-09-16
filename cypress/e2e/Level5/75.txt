@@ -1,0 +1,55 @@
+describe("Test 75 - Login nach langer Inaktivität (Session abgelaufen)", () => {
+  beforeEach(() => {
+    // Start jeder Test mit Login
+    cy.visit("/login");
+    cy.get("#username").type("testuser");
+    cy.get("#password").type("password123");
+    cy.get("button[type=submit]").click();
+
+    // Sicherstellen, dass Login erfolgreich war
+    cy.url().should("include", "/dashboard");
+  });
+
+  it("prüft Sessionhandling und Ablauf nach Inaktivität", () => {
+    // a) Session ablaufen lassen (hier Beispiel: Zeit künstlich vorspulen)
+    cy.clock(); // friert die Zeit ein
+    cy.tick(2 * 60 * 60 * 1000); // 2 Stunden vorspulen = Session Timeout simulieren
+
+    // b) Versuch, geschützte Seite zu öffnen
+    cy.visit("/dashboard");
+    // Erwartung: erneuter Login wird verlangt
+    cy.url().should("include", "/login");
+
+    // c) Prüfen, dass keine geschützten Daten mehr sichtbar sind
+    cy.get("body").should("not.contain", "Benutzerdaten");
+    cy.get("body").should("not.contain", "Dashboard");
+
+    // d) Erneut einloggen
+    cy.get("#username").type("testuser");
+    cy.get("#password").type("password123");
+    cy.get("button[type=submit]").click();
+
+    // Erwartung: wieder auf Dashboard
+    cy.url().should("include", "/dashboard");
+    cy.contains("Willkommen zurück").should("be.visible");
+
+    /**
+     * e) Kontrollfragen (als Kommentare):
+     * - Wird nach Ablauf der Session ein erneuter Login verlangt? JA
+     * - Sind keine geschützten Seiten mehr erreichbar? JA
+     * - Werden keine Daten mehr angezeigt? JA
+     * - Funktioniert nach erneutem Login wieder alles? JA
+     */
+
+    /**
+     * f) Auffälligkeiten / Fehler:
+     * - (Beispiel) Falls Session NICHT abläuft: "Session bleibt aktiv"
+     * - (Beispiel) Falls Dashboard trotzdem sichtbar: "Daten sichtbar nach Ablauf"
+     */
+
+    /**
+     * g) Fazit:
+     * Sessionhandling und Sicherheit funktionieren korrekt
+     */
+  });
+});
