@@ -1,5 +1,5 @@
 describe('Log Out ', () => {
-  it('es soll sich erfolgreich ausloggen', () => {
+  it('es soll Pflichtfelder leer lassen und sich anmelden ', () => {
   
 
 cy.visit('https://demowebshop.tricentis.com/') 
